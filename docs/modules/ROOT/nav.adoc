@@ -23,5 +23,7 @@
 ** xref:tipsntricks:maven-tips.adoc[Maven]
 ** xref:tipsntricks:lombok-tips.adoc[Lombok]
 ** xref:tipsntricks:sonarqube-tips.adoc[SonarQube]
+** xref:tipsntricks:docker-tips.adoc[Docker]
+** xref:tipsntricks:unix-tips.adoc[Unix]
 * xref:glossary.adoc[Glossary]
 * xref:references.adoc[References]

@@ -1,0 +1,41 @@
+= Docker
+
+== Create Image
+[source,bash]
+----
+$ docker build -t [IMAGE-NAME]:[TAGVERSION] . <1>
+----
+<1> Build a new image and gives it the name '[IMAGE-NAME]:[TAGVERSION]'.
+
+== Run Image
+[source,bash]
+----
+$ docker run -d --name [CONTAINER-NAME] [IMAGE-NAME]:[TAGVERSION] <1>
+----
+<1> Creates a new container process.
+
+== Run /bin/sh in Container
+[source,bash]
+----
+$ docker exec -it [CONTAINER-NAME] /bin/sh <1>
+----
+<1> This runs the /bin/sh shell in the container '[CONTAINER-NAME]'.
+
+== Prune images
+[source,bash]
+----
+$ docker image prune --force
+----
+
+[NOTE]
+====
+Sometimes we need to remove those images where the repository is marked as <none>
+and so the version.
+====
+
+== Remove local image
+[source,bash]
+----
+$ docker rmi [OPTIONS] IMAGE [IMAGE...] <1>
+----
+<1> Refer to https://docs.docker.com/engine/reference/commandline/rmi/[Docker ]

@@ -1,0 +1,24 @@
+= Unix
+
+== Getting ENV
+
+[source,bash]
+----
+$ env <1>
+----
+<1> Prints all the environment variables present in the system.
+
+== Find a file
+[source,bash]
+----
+$ find / -name "log*" <1>
+----
+<1> From the "/" look for any file containing "log".
+
+== Get /bin/sh ENV
+[source,bash]
+----
+$ env <1>
+----
+<1> Prints in console all of the environment set key/values defined in the 
+Operating System.
