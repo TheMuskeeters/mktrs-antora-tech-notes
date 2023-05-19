@@ -1,0 +1,185 @@
+= Squashing commits
+
+Aah, I will see my repo commits, ****Types git log****
+
+OMG, 10 COMMITS ONLY FOR THAT FEATURE.
+
+Narrator: Ahh, that problem, you use a LOT of commits only for that thing, your repo is flooded with commits.
+
+🎵 *[Commercial Music Playing]* 🎵
+
+Well, no more for only $19.99'⁹⁹ you can buy the CCAG (Commit Collection And Grouping).
+
+🎵 *[Glitch Sound Effects]* 🎵
+
+Ehem, Sorry for that, in this document I will explain you how to *SQUASH COMMITS*.
+
+== What?
+
+We use the term "*Squash commits*" to refer to the action of compressing any number of commits into one single and forever alone with no friends and no companion commit.
+
+== How we do that?
+
+First of all you need commits to squash (Obviously) and also you need GIT (Germany Incredible Towers..... Not really).
+
+Then we need to have an editor installed (Don't know if VSCode works), a editor like "Vim" or "Neovim"... I think I am forgetting one... Ahmm... Oh yeah "Nano".
+
+Let's get into action, first run:
+
+[source, terminal]
+----
+$ git log
+----
+
+To see commits:
+
+[source, terminal]
+----
+commit ad828a2e4fa6ef63ef155aef3c33a7909f6074c3
+Author: Your Name <your@email.com>
+Date:   Date of Commit
+
+    1 char change for Feature X
+
+commit a84e98cce77371176a587259b9ebaf255694342c
+Author: Your Name <your@email.com>
+Date:   Date of Commit
+
+    Working on Feature X
+
+commit 148b5aa043159c6997ec46bc8122c1b0649e769b
+Author: Your Name <your@email.com>
+Date:   Date of Commit
+
+    Preparing Feature X
+
+commit 687ed1b2af2e3dcb3c1b078f49bfb68a4d5762b0
+Author: Your Name <your@email>
+Date:   Date of Commit
+
+    Feature C
+----
+
+We will squash from "Preparing Feature X" to "1 char change for Feature X" onto "Feature X"
+
+For that we run:
+
+[source, terminal]
+----
+$ git rebase --interactive <hash-of-commit-1> <hash-of-commit-2>
+----
+
+In my case is:
+
+[source, terminal]
+----
+$ git rebase --interactive 148b5 ad828
+----
+
+It will open the editor you defined in .gitconfig in the form core.editor:
+
+[source, neovim]
+----
+pick ad828a2 1 char change for Feature X
+pick a84e98c Working on Feature X
+pick 148b5aa Preparing Feature X
+
+# Rebase 687ed1b..ad828a2 onto ad828a2 (3 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+----
+
+Then we replace pick for s (squash) except for the first one:
+
+[source, neovim]
+----
+pick ad828a2 1 char change for Feature X                               
+s a84e98c Working on Feature X
+s 148b5aa Preparing Feature X
+# Rebase 687ed1b..ad828a2 onto ad828a2 (3 commands)
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log mess
+age
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+----
+
+We save and exit, then it will prompt again for a commit message:
+
+[source, neovim]
+----
+# This is a combination of 3 commits.
+# This is the 1st commit message:                                      
+1 char change for Feature X
+
+# This is the commit message #2:
+
+Working on Feature X
+
+# This is the commit message #3:
+
+Preparing Feature X
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto ad828a2
+# Last commands done (3 commands done):
+#    pick b7e7071 1 char change for Feature X
+#    squash 5bb5b1a Working on Feature X
+#    squash 148b5aa Preparing Feature X
+# No commands remaining
+# You are currently rebasing branch 'master' on 'ad828a2'.
+#
+# Changes to be committed:
+#       modified:   folder/file.filetype
+#
+----
+
+You then type the commit message and delete everything except of your commit message, or delete every other commit message except from the one you typed new or just comment the others except for yours.
+
+== Success
+
+An that's it for this tip.

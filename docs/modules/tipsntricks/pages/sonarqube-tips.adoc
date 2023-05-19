@@ -1,0 +1,25 @@
+= SonarQube
+
+Here you will find useful references to get acquainted to '*_SonarQube_*' topics.
+
+* *All Distribution files*
+https://binaries.sonarsource.com/Distribution/sonarqube/
+
+[NOTE]
+====
+This is for https://sonarcloud.io
+
+* *Sonar Integration with Maven* (https://mincong-h.github.io/2017/12/09/sonar-integration-with-maven/)
+====
+
+* *SonarQube Integration with Jenkins Using Pipelines*
+https://www.evoketechnologies.com/blog/sonarqube-integration-jenkins-pipelines/
+
+* *Code Analysis with SonarQube*
+https://www.baeldung.com/sonar-qube
+
+* *Using SonarQube to Analyze a Java Project*
+https://medium.com/linagora-engineering/using-sonarqube-to-analyze-a-java-project-abeee15e3779
+
+* *SONAR JaCoCo And MAVEN Integration*
+http://ashismo.github.io/java-code%20quality%20analyzer/2016/03/14/SONAR-JaCoCo-And-Maven-Integration

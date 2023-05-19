@@ -1,0 +1,9 @@
+= Tips and Tricks
+
+In this section you will find a 
+
+* xref:git-tips.adoc[Git]
+* xref:asciidoctor-tips.adoc[AsciiDoctor] 
+* xref:maven-tips.adoc[Maven]
+* xref:lombok-tips.adoc[Lombok]
+* xref:sonarqube-tips.adoc[SonarQube]

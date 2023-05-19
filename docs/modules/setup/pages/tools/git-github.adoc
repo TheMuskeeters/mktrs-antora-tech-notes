@@ -1,0 +1,3 @@
+= Git/Github
+
+include::ROOT:partial$lorem-ipsum.adoc[]

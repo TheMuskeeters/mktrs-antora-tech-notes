@@ -1,0 +1,27 @@
+= Maven
+
+== Maven Test fails
+When you are under an *_OpenJDK 8_* and try to execute *_Maven_*  tests, an exception occurs with the following
+message _Could not find or load main class org.apache.maven.surefire.booter.ForkedBooter_, there are two
+possible solutions, one is documented here.
+
+* *Could not find or load main class org.apache.maven.surefire.booter.ForkedBooter* (https://medium.com/@betterjavacodecom/could-not-find-or-load-main-class-org-apache-maven-surefire-booter-forkedbooter-f7ad92653a92)
+
+The other is to configure Maven to not use the System Class Loader which can be configure
+in Maven with the following code.
+
+[source,xml]
+----
+    <build>
+        <plugins>
+            ...
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+----

@@ -1,0 +1,13 @@
+= Jenkins
+
+According to the https://jenkins.io[Jenkins^] site.
+
+[quote, Jenkins Site]
+____
+*Build great things at any scale* 
+
+The leading open source automation server, Jenkins provides hundreds of plugins
+to support building, deploying and automating any project.
+____
+
+include::partial$jenkins-body.adoc[]

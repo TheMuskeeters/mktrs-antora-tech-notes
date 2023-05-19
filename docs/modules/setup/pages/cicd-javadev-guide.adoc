@@ -1,0 +1,242 @@
+= Docker/jenkins/SonarQube
+
+[WARNING]
+====
+When you get the proposed install versions for the software you may encounter
+that the *LATEST* is greater than the one shown here, this is because
+software changes to add new features or bug fixes.
+
+It is recommended to use the *LATEST* and *greatest*
+====
+
+Here you find the step by step process for creating a local environment using
+*_CICD_* practices.
+
+== Create Spring Boot App
+Here the process is simple as we assume you know how to create a basic 
+*Spring Boot* using the best starter link ever 
+link:https://start.spring.io/[Start Spring IO^].
+
+.Spring Boot Initializr
+image::001-spring-initializr.jpg[Spring Boot Initializr,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Generate the project and extract downloaded zip file. This way we have the 
+initial project configuration.
+
+[CAUTION]
+====
+Eventually this code would be pushed to a *_Git_* repository. Use your
+favorite IDE to edit files and continue with the tutorial.
+
+A copy of this code is in the link:https://github.com/cortizqgithub/tutorial-cicd-jenkins-sonar[Tutorial CICD Jenkins Sonar^] git repository.
+
+====
+
+== Configure Jenkins
+Here we are going to document only the necessary steps required for our setup to properly work.
+
+[NOTE]
+====
+The assumption here is that you already configured *_Jenkins_* using the Docker image or the standalone WAR 
+file (remember that *_Jenkins_* requires *_JDK 8_*).
+====
+
+In this document we are going to use the *_Dockerized_* version of *_Jenkins_*. 
+Please refer to the Docker INSERT LINK REFERENCE HERE section for details.
+We need to know what it is installed in the *_Docker_* image, to do so, 
+type the following command to access the command line interface for such image.
+
+[source,terminal]
+----
+$ docker ps <1>
+$ docker exec -it <container_name>|<container_id> /bin/bash <2>
+----
+<1> To gather the _container_name_ or _container_id for the *_Docker_* image.
+<2> To access the container command line interface.
+
+As we built our sample application using *_Java 8_*, *_Spring Boot_* and *_Maven_*, 
+we need to guarantee them inthe *_Docker_* image.
+
+[source,terminal]
+----
+$ java -version <1>
+$ git --version <2>
+$ mvn --version <3>
+----
+<1> Java verification. If it works we know it has JDK installed (and it must as it is a requirement 
+for *_Jenkins_*). We need *_JDK 8_* and in fact it uses _OpenJDK 1.8.0_181_, which it is 
+already installed in *_Docker_* image.
+<2> Git verification. If it works then we can use it for the sake of pulling source code in the *_Jenkins_* pipeline,
+otherwise it needs to be installed *NOTE:* It is present in the *_Docker_* image.
+<3> Maven verification. If it works then we can use it for the sake of building our source code, otherwise it needs to be installed.
+*NOTE:* This is not present in *_Docker_* image, so we need to install it.
+
+As the last verification fails for *_Maven_* we must proceed to guarantee it is present in the *_Docker_* image.
+To do so, there are two ways, one is to let *_Jenkins_* set it up, or in the *_Docker_* image  command line
+interface install it by hand. In this guide we will follow the *_Jenkins_*, which we describe next.
+
+== Build Pipeline
+In order to run the *_Jenkins_* pipeline for this guide, there are some other plugins to be installed.
+Select the _Manage Jenkins Plugins_ as shown below.
+
+.Jenkins Manage Plugins
+image::./jenkins/012-manage-plugins.png[Jenkins Manage Plugins,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next select the _Available_ plugins and use the filter (search) option to search for these plugins.
+
+.Jenkins Plugin JaCoCo
+image::./jenkins/013-plugin-jacoco.png[Jenkins Plugin JaCoCo,700,700,scaledwidth=75%,pdfwidth=60%]
+
+.Jenkins Plugin SonarQube Scanner
+image::./jenkins/014-plugin-sonarqube-scanner.png[Jenkins Plugin SonarQube Scanner,700,700,scaledwidth=75%,pdfwidth=60%]
+
+.Jenkins Plugin Build Pipeline
+image::./jenkins/015-plugin-build-pipeline.png[Jenkins Plugin Build Pipeline,700,700,scaledwidth=75%,pdfwidth=60%]
+
+TIP: Use the latest version for plugin at the moment besides the names may also differ.
+
+Once they are selected, use the *_Install without restart_* button.
+
+.Jenkins Installing Plugins
+image::./jenkins/016-plugin-installing.png[Jenkins Installing Plugins,700,700,scaledwidth=75%,pdfwidth=60%]
+
+CAUTION: It is necessary to restart in order to use these plugins, do it now.
+
+== Configure Maven in Jenkins
+include::partial$global-tool-config.adoc[]
+
+Next locate the *_Maven_* section.
+
+.Jenkins Maven Setup
+image::./jenkins/011-install-maven.png[Jenkins Maven Setup,700,700,scaledwidth=75%,pdfwidth=60%]
+
+To achieve what is shown in the picture above you must click the *_Add Maven_* button and set as the image depicts.
+
+NOTE: Select the version that is more convenient according to your project.
+
+Next click the *_Save_* to finish and this way you have maven setup.
+
+== Configure SonarQube Scanner
+After all required plugins are installed in the previous section, we need to install the SonarQube Scanner.
+
+include::partial$global-tool-config.adoc[]
+
+Next locate the *_SonarQube Scanner_* section.
+
+.Jenkins Install SonarQube Scanner
+image::./jenkins/019-install-sonarqube-scanner.png[Jenkins Install SonarQube Scanner,700,700,scaledwidth=75%,pdfwidth=60%]
+
+To achieve what is shown in the picture above you must click the *_Add SonarQube Scanner_* button and set as the image depicts.
+
+NOTE: Select the version that is more convenient according to your project.
+
+Next click the *_Save_* to finish and this way you have maven setup.
+
+== Configure SonarQube
+-----ZZZZZ TODO
+
+
+== Build a Pipeline
+A pipeline in Jenkins is the recipe of tasks it needs to execute, sequentially or in parallel. In this
+section we are going to define our sample pipeline for demostration purposes.
+
+Login to *_Jenkins_* and click the _Create new Jobs_ or New Item.
+
+.Jenkins Create new Jobs
+image::./jenkins/017-create-new-jobs.png[Jenkins Create new Jobs,700,700,scaledwidth=75%,pdfwidth=60%]
+
+The next step is to declare the type of project we are going to build. Here we create a folder style
+as a container for steps in the pipeline.
+
+.Jenkins Job Free Folder Style
+image::./jenkins/018-create-new-folder-style.png[Jenkins Job Free Folder Style,700,700,scaledwidth=75%,pdfwidth=60%]
+
+In the name of the project write _JavaDemo_.
+When you go back to main page, you will be presented with the following screen.
+
+.Jenkins Folder Setup View
+image::./jenkins/020-job-setup-folder.png[Jenkins Folder Setup View,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+Notice the *_Sun_* in the second column, this will show you the status of the project, when in the *_Sun_* icon, 
+it means that the project is healthy, and it is based in the last five executions of the job.
+====
+
+The next step  is to configure the steps for the pipeline. Click in th *_Java Jenkins/Sonar Demo_* and 
+it will show the following screen.
+
+.Jenkins Sonar Home
+image::./jenkins/021-java-jenkins-sonar-home.png[Jenkins Sonar Home,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next you must create a new item to be associated in the container. For this purpose locate the *_New Item_* in
+the menu. And in the choices for new items select the *_Freestyle project_*, and select *Ok*.
+
+.Jenkins Checkout Code
+image::./jenkins/022-checkoutcode.png[Jenkins Checkout Code,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next it is time to configure how to access the source code, which will be made by *_Git_*.
+First define what is the URL where the code will be pulled from.
+
+Click in the *_Source Code Managemente_* tab link.
+
+.Jenkins Checkout Code URL
+image::./jenkins/023-checkoutcode-url.png[.Jenkins Checkout Code URL,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next click in the *_Build Triggers*_, this will schedule execution every 15 minutes.
+
+.Jenkins Checkout Code Build Triggers
+image::./jenkins/024-checkoutcode-buildperiodically.png[Jenkins Checkout Code Build Triggers,700,700,scaledwidth=75%,pdfwidth=60%]
+
+At this point click in *_Apply_* and then *_Save_* buttons which lead you to here.
+
+.Jenkins Checkout Code Project View
+image::./jenkins/025-checkoutcode-project-view.png[Jenkins Checkout Code Project View,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next click in the *_+_* button to define more steps. Here we are going to add the *_Pipeline_* View.
+
+.Jenkins Pipeline View
+image::./jenkins/026-pipeline-view.png[,700,700,scaledwidth=75%,pdfwidth=60%]
+
+And in the settings form put the following values (only one shown).
+
+.Jenkins Pipeline View Config
+image::./jenkins/027-pipeline-view-config.png[Jenkins Pipeline View Config,700,700,scaledwidth=75%,pdfwidth=60%]
+
+This way in the project home a new tab appears to show the *_Pipeline_*, as shown next.
+
+.Jenkins Link to Pipeline
+image::./jenkins/028-link-to-pipeline.png[Jenkins Link to Pipeline,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next we create the next step in the pipeline. Select the *_New Item_* when you are in this following
+screen.
+
+.Jenkins Compile Step 
+image::./jenkins/029-project-compile-start.png[Jenkins Compile Step,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next we define the type of project.
+
+.Jenkins Compile Step Type Definition
+image::jenkins/030-project-compile-type-definition.png[Jenkins Compile Step Type Definition,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Click *_Ok_* to define the settings for task and then click on tab *_Build Triggers_* and configure as shown 
+next.
+
+.Jenkins Compile Build Triggers
+image::jenkins/031-project-compile-buil-triggers.png[Jenkins Compile Build Triggers,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Next click the tab *_Build_*, click in the *_Add build step_* which will present a list of choices and the
+one to select is *_Invoke top-level Maven targets_* which will lead to the following settings.
+
+.Jenkins Compile Build Settings
+image::./jenkins/032-project-compile-maven-definiton.png[Jenkins Compile Build Settings,700,700,scaledwidth=75%,pdfwidth=60%]
+
+And select the *_Advanced_* button and in the *_POM_* field set the path for the source code which is 
+located under the *_Jenkins_* installation Project Workspace.
+
+And this conclude this job.  Based in these instructions you can create the next job which is to run the
+Java App Tests. Here name task as *_test_* and in the similar way for job *_package_*.
+
+
+
+

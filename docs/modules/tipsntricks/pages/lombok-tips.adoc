@@ -1,0 +1,3 @@
+= Lombok
+
+* *Ignoring Lombok Code in Jacoco* https://www.rainerhahnekamp.com/en/ignoring-lombok-code-in-jacoco/

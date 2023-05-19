@@ -1,0 +1,141 @@
+= IntelliJ Smart Tomcat
+
+The *SmartTomcat* will auto load the Webapp classes and libs from project and 
+module, you needn't copy the classes and libs to the WEB-INF/classes and 
+WEB-INF/lib.
+
+The Smart Tomcat plugin will auto config the classpath for tomcat server.
+The Smart Tomcat support *Tomcat 6+*.
+
+So here we are going to explain how to install and configure this *IntelliJ* 
+plugin.
+
+== Installation
+The first thing you need to do is open the *IntelliJ* IDE, for this guide the
+version used is _2021.2.3_ or later.
+
+To open the *IntelliJ* _Settings_ dialog, do the following.
+
+* In Windows, navigate to *_File -> Settings_* or press *_CTRL+ALT+S_*.
+* In MacOSX, navigate to *_IntelliJ IDEA -> Preferences* or press *_CMD+,_*.
+
+[NOTE]
+====
+Most of the screenshot captures are taken using the *_Windows_* OS.
+====
+
+.IntelliJ Open Settings Dialog
+image::intellij/001-intellij-open-settings.png[IntelliJ Open Settings Dialog,500,500,scaledwidth=75%,pdfwidth=60%]
+
+Next locate in the options the _Plugins_ choice. Use the search box to locate
+it quickly as shown next.
+
+.IntelliJ Settings Plugins
+image::intellij/002-intellij-settings-plugins.png[IntelliJ Settings Plugins,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Play special attention that the dialog presents two choices for checking if the
+desired *Plugin* is installed or not, notice in the screenshot that it has
+two tabs, one named *Marketplace* and the other *Installed*. If the *Plugin*
+is not yet installed it means you need to look for it in the *Marketplace*
+tab, typing in the search box the name of the *Plugin* you need, in this case,
+*Smart Tomcat*.
+
+.IntelliJ Select Smart Tomcat
+image::intellij-smart-tomcat/001-intellij-select-smart-tomcat.png[IntelliJ Settings Plugins,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+As indicated in the screenshot, the *_Smart Tomcat_* is already installed, but
+if you happen not to have it already installed in your *_InteliJ*, it would
+say _Install_, which is the action you should take now.
+====
+
+After the plugin is correctly installed then it should appear in the other 
+tab mentioned before.
+
+== Configuration
+Now that we have the plugin properly configured, let's add a new *_Tomcat_*
+configuration.
+
+In your *_IntelliJ_* locate the *_Add Configuration..._* option shown next.
+
+.IntelliJ Add Configuration
+image::intellij/003-intellij-add-configuration.png[IntelliJ Add Configuration,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+If the text is not there it means that you already set a configuration to run,
+so clicking in the same place presents you with other choices.
+====
+
+And it shows the following dialog.
+
+.IntelliJ Run/Debug Configurations
+image::intellij/004-Intellij-add-configuration-empty.png[IntelliJ Run/Debug Configurations,700,700,scaledwidth=75%,pdfwidth=60%]
+
+To create a new configuration just click in the plus icon to the left of the dialog.
+
+.IntelliJ Run/Debug Configuration Add New
+image::intellij/005-intellij-add-configuration-new.png[IntelliJ Run/Debug Configuration Add New,700,700,scaledwidth=75%,pdfwidth=60%]
+
+It will present to you with a selection box.
+
+.IntelliJ Select Smart Tomcat Configuration
+image::intellij-smart-tomcat/002-intellij-add-smart-tomcat.png[IntelliJ Select Smart Tomcat Configuration,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+Scroll down to locate the *_Smart Tomcat_* configuration to add.
+====
+
+As you may have guessed, *_Smart Tomcat_* requires to know the location of your
+*_Tomcat Server_* so he can proceed to put the artifacts therein.
+
+Notice that here we don't have one defined, so it is now time to declare one as
+shown next, click on the *Configuration* button to define one.
+
+.Add Tomcat Server
+image::intellij-smart-tomcat/003-add-tomcat-server.png[Add Tomcat Server,700,700,scaledwidth=75%,pdfwidth=60%]
+
+This opens a dialog to define the *_Tomcat Server_*.
+
+.Define Tomcat Server
+image::intellij-smart-tomcat/004-define-tomcat-server.png[Define Tomcat Server,700,700,scaledwidth=75%,pdfwidth=60%]
+
+As shown in the previous imaga, there are no servers defined, so click the 
+indicated button, where it will ask you the location in your file system where
+you have installed/configured your *_Tomcat Server_*.
+
+.Define Tomcat Server Location
+image::intellij-smart-tomcat/005-define-tomcat-server-location.png[Define Tomcat Server Location,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Click on the *Apply* and later the *OK* button to accept this setting.
+
+It takes you back to previous dialog, expand the drop down box for the 
+*Tomcat Server* 
+
+.Choose Tomcat Server
+image::intellij-smart-tomcat/006-choose-tomcat-server.png[Choose Tomcat Server,700,700,scaledwidth=75%,pdfwidth=60%]
+
+What is left is to adjust the settings according to our needs.
+
+.Configure Smart Tomcat Server
+image::intellij-smart-tomcat/007-configure-settings.png[Configure Smart Tomcat Server,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Where:
+
+. Indicates the name of the configuration to run/debug.
+. Choose the appropriate Tomcat server.
+. A working directory for *_Smart Tomcat_*, notice that this folder should not 
+be included in the *Git* repository, that is, it must be excluded.
+. Sets the context path for the application, normaly it is the *IntelliJ* module.
+. Indicates the memory assigned to the *_Tomcat_* process.
+. Click the *Apply* button to accept the changes.
+. Click the *OK* button to accept the changes and close the dialog.
+
+[NOTE]
+====
+This is a sample configuration, it may change given your requirements.
+====
+
+

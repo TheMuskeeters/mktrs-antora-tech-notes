@@ -1,0 +1,50 @@
+= Docker Desktop
+
+The purpose for this setup guide is to assist you in setting and configuring
+*Docker Desktop*. The instructions here are for *Windows*.
+
+Somehow here are some useful links.
+
+* https://docs.docker.com/desktop/windows/install/[Installing Docker Desktop Windows^]
+* https://docs.docker.com/desktop/mac/install/[Installing Docker Desktop Mac^]
+
+For the purpose of this guide on *Windows* we will configure the *_WSL 2_* backend.
+For instructions on this follow https://docs.microsoft.com/en-us/windows/wsl/install[Microsoft Install WSL^]. 
+
+After you have downloaded the setup file _Docker Desktop Installer.exe_. Execute
+this program using administrative rights to perform the installation.
+
+[NOTE]
+====
+The current version as the time of writing for this setup guide is V4.1.0 (69386)
+====
+
+By following the following screenshots you install *Docker Desktop* in your 
+machine.
+
+.Init Setup
+image::docker/001-docker-desktop-setup-init.png[Init Setup]
+
+.Set Configuration
+image::docker/002-docker-desktop-setup-config.png[Set Configuration]
+
+.Extracting Files
+image::docker/003-docker-desktop-setup-extracting-files.png[Extracting files,700,700,scaledwidth=75%,pdfwidth=60%]
+
+.Setup Complete
+image::docker/004-docker-desktop-setup-complete.png[Setup Complete]
+
+*Docker Desktop* does not start automatically after installation. To start
+*Docker Desktop*, search for *Docker* and select *Docker Desktop* in the 
+search results.
+
+.Windows Search Docker Desktop
+image::docker/005-docker-desktop-search-app.png[Windows Search Docker Desktop]
+
+The first screen presented is to ask you for the terms and conditions, accept
+as shown next and there you are good to go.
+
+.Docker Desktop Accept Terms
+image::docker/006-docker-desktop-accept-terms.png[Docker Desktop Accept Terms]
+
+Now you can use *Docker* in your machine.

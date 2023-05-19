@@ -1,0 +1,105 @@
+= Rancher Desktop
+
+Alternative to Docker Desktop (it is now paid)
+
+WIP
+
+https://rancherdesktop.io/
+
+.Rancher Desktop Site
+image::rancher-desktop/001-rancher-desktop-site.png[Rancher Desktop Site]
+
+Next locate the *Download* section and select the version you need for your 
+*Operating System*.
+
+.Rancher Desktop Site (Download Section)
+image::rancher-desktop/005-rancher-desktop-site-download.png[Rancher Desktop Site (Download Section)]
+
+Click in the *Install Rancher Desktop* button  and select the artifact for 
+your operating system.
+
+[NOTE]
+====
+This guide uses Microsoft Windows.
+====
+
+Click in *I Agree* button.
+
+.Rancher Desktop Setup Init
+image::rancher-desktop/002-rancher-desktop-setup-init.png[Rancher Desktop Init]
+
+The process of installation begins
+
+.Rancher Desktop Setup Installing
+image::rancher-desktop/003-rancher-desktop-installing.png[Rancher Desktop Installing]
+
+After installing it tells you this.
+
+.Rancher Desktop Setup Finish
+image::rancher-desktop/004-rancher-desktop-setup-end.png[Rancher Desktop Finish]
+
+When you click the *Finish* button it executes the *Rancher Desktop* application
+for the first time.
+
+It will popup a window requesting the architecture to use for managing the 
+images, processes, etc.
+
+.Rancher Desktop First Time
+image::rancher-desktop/006-rancher-desktop-first-time.png[Rancher Desktop First Time]
+
+After you select the option to use, it will show up the following screen.
+
+.Rancher Desktop User Interface
+image::rancher-desktop/007-rancher-desktop-ui.png[Rancher Desktop User Interface]
+
+== Troubleshooting
+
+=== WSL VPN Issue
+For _Rancher Desktop_ V1.0 it is necessary to use the following configuration 
+in order to overcome any problem when connected to a VPN.
+
+For Windows:
+
+Download this https://github.com/sakai135/wsl-vpnkit/releases/download/v0.2.5/wsl-vpnkit.tar.gz
+Open a Powershell terminal, navigate to the location where you downloaded the file
+And then, execute these commands
+
+Go to the folder where you downloaded that file (do not uncompress) and run
+the following commands using a *PowerShell* command.
+
+[source,bash]
+----
+$ wsl --import wsl-vpnkit $env:USERPROFILE\wsl-vpnkit wsl-vpnkit.tar.gz --version 2
+$ wsl -d wsl-vpnkit
+$ wsl -d wsl-vpnkit service wsl-vpnkit start
+----
+
+[CAUTION]
+====
+As of _Rancher Desktop_ V1.4.1, this hack is not required.
+====
+
+=== Get Installer via WGET
+If you find you have no access in browser to the *github.com* domain due to 
+employer policies, then use the following workaround.
+
+[TIP]
+====
+*_Microsoft Windows_* Operating System does not come with *wget* utility and 
+needs to be downloaded externally. Following are two resources where to install
+this utility.
+
+* https://builtvisible.com/download-your-website-with-wget/[How to download, install and use WGET in Windows^]
+* https://eternallybored.org/misc/wget/[Windows binaries of GNU Wget^]
+
+Take into account if your *Windows* machine is 32 or 64 bits.
+====
+
+[%header,cols="15%, 85%"]
+|===
+|System|Command
+|Windows|https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop.Setup.1.4.1.exe
+|Mac OS Intel|wget https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop-1.4.1.x86_64.dmg
+|Mac OS Silicon|wget https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop-1.4.1.x86_64.dmg
+|Linux|Use the following instructions: https://docs.rancherdesktop.io/getting-started/installation/#linux[Installation Linux^]
+|===

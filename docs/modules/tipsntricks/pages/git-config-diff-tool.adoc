@@ -1,0 +1,124 @@
+= Configure External Diff Tool
+
+When you have to solve conflicts in git. You normally would see the conflict marked in the same file but in
+a cumbersome to edit it by hand. 
+
+So it is better to have a graphical user interface that helps in identifying the changes and do it graphically.
+The purpose of this document is to setup such a tool to use inside the git command tool in the terminal.
+
+As a reference of merge conflicts situations, take a look into https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts[Understanding merge conflicts^].
+
+== Installing Visual Merge Tool
+Go to the following link to download https://www.perforce.com/downloads/visual-merge-tool[Helix Visual Merge Tool^].
+
+You will see a link like the following.
+
+.Perforce Visual Merge Tool Home Page
+image::./git/001-visual-merge-tool.png[Perforce Visual Merge Tool Home Page,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Once you have it downloaded, execute the installer program following your Operating System conventions, for the
+sake of this guide, it will use the '*_Microsoft Windows_*' Operating System.
+
+.Visual Merge Tool Setup
+image::./git/002-visual-merge-tool-setup.png[Visual Merge Tool Setup,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Click '*_Next_*' button.
+
+.Visual Merge Tool Setup (Client Config)
+image::./git/003-visual-merge-tool-setup-client-config.png[Visual Merge Tool Setup (Client Config),700,700,scaledwidth=75%,pdfwidth=60%]
+
+Select fields as shown in the last picture and then click '*_Next_*' button.
+
+.Visual Merge Tool Setup Start
+image::./git/004-visual-merge-tool-setup-start.png[Visual Merge Tool Setup Start,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Click '*_Install_*' button.
+
+.Visual Merge Tool Installing
+image::./git/005-visual-merge-tool-installing.png[Visual Merge Tool Installing,700,700,scaledwidth=75%,pdfwidth=60%]
+
+At this point it will make the setup process, it will take some minutes to complete, after that you will see the following.
+
+.Visual Merge Tool Installation Complete
+image::./git/006-visual-merge-tool-finish.png[Visual Merge Tool Installation Complete,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[CAUTION]
+====
+Notice that the installation needs to restart your computer for the configurations to take effect.
+====
+
+Click *Restart now* to complete the setup process, after you restart you will see the following.
+
+.Visual Merge Tool Installation Restart Complete
+image::./git/008-visual-merge-tool-restart-complete.png[Visual Merge Tool Installation Restart Complete,700,700,scaledwidth=75%,pdfwidth=60%]
+
+== Configuring Git Merge Tool
+In this section we will indicate the steps to make the 'git client' to use the external tool in order to resolve merge conflicts in a
+confortable way.
+
+First step is to indicate git tool which will be the external diff merge tool. Open a `git bash` terminal and type the following.
+
+[source,terminal]
+----
+$ git config --global merge.tool p4merge
+----
+
+This will add an entry key in the global `git bash` configuration settings file.
+
+Now it is time to indicate `git bash` what is the external path to use to associate to the `merge.tool`.
+
+[source,terminal]
+----
+$ git config mergetool.p4merge.path "C:\Program Files\Perforce\p4merge.exe"
+----
+
+[NOTE]
+====
+Notice the path is expressed in the *Operating System* specific syntax.
+====
+
+Now that we have the merge tool `git bash` will use to resolve conflicts in a more visual way, it is time to see it in action.
+
+[source,terminal]
+----
+$ git mergetool
+----
+
+[NOTE]
+====
+To have a visual cue of the Visual Merge Tool in action, I followed the tutorial steps in https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts[Understanding merge conflicts^].
+====
+
+Now if you execute the command `git mergetool`, *_git_* will execute the external configured merge tool, by showing the following screenshot.
+
+[TIP]
+====
+If you need more information about how to use the '*Visual Merge Tool*' you can open the help menu in the program which leads to the following link 
+https://www.perforce.com/perforce/r20.1/manuals/p4merge/Content/P4Merge/diff-merge.p4merge.html[P4Merge Help^]. Notice that it is best to open the
+link from within the program as it may change the version.
+====
+
+.Visual Merge Tool (Resolve git Conflict)
+image::./git/007-visual-merge-tool-resolve-git-conflict.png[Visual Merge Tool (Resolve git Conflict),700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+As per the tutorial, the conflict is in the file '*_merge.txt_*' file, to which git creates the following files underneath to pass them to the 
+'*Visual Merge Tool*' in order to accomplish its task.
+
+* merge_BACKUP_707.txt
+* merge_REMOTE_707.txt
+* merge_LOCAL_707.txt
+* merge_BASE_707.txt
+====
+
+After you have resolved the conflict, you must save the changes in the tool.
+
+[CAUTION]
+====
+After you have resolved the conflicts and saved the changes it will tell `git` that the conflict was resolved. But a copy of the original conflict
+was created by the '*Visual Merge Tool*' which needs to be removed before commiting the mergeed versions.
+====
+
+If you have more than one file in conflict, it will open the '*Visual Merge Tool*' for each of the conflict files and you repeat the steps described to solve the conflicts, after all of the conflicts are resolved you simply add a commit to finish the merge process to indicate the conflicts were
+resolved.

@@ -1,0 +1,219 @@
+= Tomcat
+Apache Tomcat (called *"Tomcat"* for short) is a free and open-source 
+implementation of the Jakarta Servlet, Jakarta Expression Language, and WebSocket
+technologies. Tomcat provides a *"pure Java"* HTTP web server environment in 
+which Java code can run.
+
+Tomcat is developed and maintained by an open community of developers under the
+auspices of the Apache Software Foundation, released under the Apache 
+License 2.0 license.
+
+For more information visit https://tomcat.apache.org/[Tomcat Page^].
+
+== Configuring
+As there are many versions avaiable of *Tomcat*, we need to understand which
+one to use in our projects.
+
+For that matter, check the https://tomcat.apache.org/whichversion.html[Apache Tomcat Versions^].
+
+[NOTE]
+====
+As we are currently using *Java 8* and *11* versions we can use any version
+from 8.5.72 and above. 
+
+Here, we use *10.0.12*. The instructions are the same for *8.5.x*, *9.0.x*.
+
+Besides, the instructions are written using a *Microsoft Windows* Operating 
+System, so you can expect folder names or other specific commands in this
+_Operating System_.
+====
+
+The first step is to go to the https://tomcat.apache.org/download-10.cgi[Apache Tomcat Download Page].
+
+.Tomcat Download
+image::tomcat/001-tomcat-download.png[Tomcat Download,700,700,scaledwidth=75%,pdfwidth=60%]
+
+When you click you will move the page forward to the following place.
+
+.Tomcat Download Version Selection
+image::tomcat/002-tomcat-download-ver-sel.png[Tomcat Download Version Selection,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+You can explore the other choices available, but here we use the indicated 
+*ZIP* choice.
+====
+
+As this is a *ZIP* file, use any tool to explode its contents. 
+Take note of the location you exploded those contents as from now on, this is
+considered as the *[TOMCAT_HOME]*, for example, *[TOMCAT_HOME]* is set to 
+*'c:\java\apache-tomcat-10.0.12\'*.
+
+Set the following line inside file *_startup.bat_* or *_startup.sh_* in the 
+*[TOMCAT_HOME]\bin* folder:
+
+[source,txt]
+----
+set CATALINA_OPTS="-agentlib:jdwp=transport=dt_socket,address=7999,server=y,suspend=n"
+----
+
+You can see a screenshot showing this.
+
+.Tomcat Add Agent Port
+image::tomcat/003-tomcat-add-agent.png[Tomcat Add Agent Port,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Using this configuration, you are telling *Tomcat* to expose port 7999 (change 
+this number to one that is not used if you get a conflict) in order
+to connect to it remotely for debugging purposes.
+
+== Running Tomcat
+Now you have the software installed and provided you have the proper *[JAVA_HOME]*
+setting configured, you can go to a terminal window (or use a *_BASH_* terminal
+in *Windows*) and type the following command.
+
+[NOTE]
+====
+Go to [TOMCAT_HOME]\bin folder.
+====
+
+[source,bash]
+----
+$ ./startup
+----
+
+.Tomcat Startup
+image::tomcat/004-tomcat-startup-windows-terminal.png[Tomcat Startup,700,700,scaledwidth=75%,pdfwidth=60%]
+
+When executing this command it opens up a new window but this time it is for the
+Java process.
+
+[NOTE]
+====
+Here, *Tomcat* is using JRE_HOME for JDK 8, if you need to change this setting, 
+you simply change the *[JAVA_HOME]* environment variable.
+====
+
+.Tomcat Java Process
+image::tomcat/005-tomcat-java-process.png[Tomcat Java Process,700,700,scaledwidth=75%,pdfwidth=60%]
+
+When you need to stop the server, execute the *[TOMCAT_HOME]\bin\shutdown.bat* (Windows) or
+*[TOMCAT_HOME]/bin/shutdown.sh* (Linux) script.
+
+[NOTE]
+====
+If this does not work, go to the *_Tomcat Java Process_* window and press 
+CTRL+C (Windows) to cancel the process (check your key in other _Operating 
+System_.
+====
+
+Take special care of the following:
+
+[IMPORTANT]
+====
+Configure the SSL certificates to talk to other systems over HTTPS before 
+starting the *Tomcat* instance to the *_JDK_* it is running with. 
+
+See xref:setup:tools/jdk.adoc[JDK]
+====
+
+To check that *Tomcat* server is working, open the followng URL in the browser:
+
+----
+http://localhost:8080/
+----
+
+[NOTE]
+====
+If you need to change the port to any other available number for your 
+configuration or if for some reason it is now used. Open the following file
+[TOMCAT_HOME]\conf\server.xml and locate the following entry
+
+[source,xml]
+----
+    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+
+----
+
+Change the *port* value to the one you need.
+====
+
+.Tomcat Server Page
+image::tomcat/006-tomcat-page.png[Tomcat Server Page,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[WARNING]
+====
+To access any of the *Server Status*, *Manage App*, *Host Manager* buttons, 
+we need to configure the *Tomcat* Server for administrator users.
+
+To do so, go to *[TOMCAT_HOME]\conf* folder, locate the file *_tomcat-users.xml_*
+and add the following before closing the *_</tomcat-users>_*.
+
+[source,xml]
+----
+<role rolename="admin-gui"/>
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>  
+<user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui"/>
+----
+
+Save the file and restart the server. Now when prompted for the user type
+*_admin/admin_*. 
+
+Notice this is valid only for development environment and not for production
+environment.
+
+.Tomcat Users Settings
+image::tomcat/007-tomcat-users-setting.png[Tomcat Users Settings,700,700,scaledwidth=75%,pdfwidth=60%]
+
+====
+
+When you use any of the *Server Status*, *Manage App*, *Host Manager* options, 
+you can see them in the following (remember to use an allowed user).
+
+== Server Status
+With this option you can evaluate the status of the server.
+To access this option you need to provide an allowed user (see previous section).
+
+.Tomcat Server Status
+image::tomcat/008-tomcat-server-status.png[Tomcat Server Status,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Explore the options that are presented there.
+
+== Manage App
+Here you can get a glimpse of all the applications deployed to the server. 
+To access this option you need to provide an allowed user (see previous section).
+
+.Tomcat Manage App
+image::tomcat/009-tomcat-manage-app.png[Tomcat Manage App,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+If you place any *WAR* (this is the artifact that *Tomcat* server understands 
+to properly configure as an application), and if you place this *WAR* into
+*[TOMCAT_HOME]\webapps* folder, the server will detect it and it deploys that
+artifat to the server.
+
+For example, if the *WAR* is name as *_my-app.war_* and you put into that folder,
+then the *Tomcat* server will deploy it and configure that application and 
+configures its context such as 'http://localhost:8080/my-app'
+====
+
+== Virtual Host Manager
+Here you will see the configuration of the running *Tomcat* server, this option
+is only available to be viewed with a browser that is running in the same
+computer the server is running. To access this option you need to be connected
+with an authorized user.
+
+.Tomcat Virtal Host Manager
+image::tomcat/010-tomcat-host-manage.png[Tomcat Virtal Host Manager,700,700,scaledwidth=75%,pdfwidth=60%]
+
+== Sample Application
+In order to exercise other topics so you get the full knowlege about how
+*Tomcat* server works, let's creat a sample application to ilustrate this
+concepts.
+
+-----> Spring Boot App Sample 

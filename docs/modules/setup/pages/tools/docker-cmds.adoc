@@ -1,0 +1,90 @@
+= Docker commands
+Following are some useful commands to exercise *Docker*.
+
+== Images
+Using the _docker pull <image>_ you get access to any software container.
+
+[source,bash]
+----
+
+$ docker pull redis
+$ docker pull neo4j
+$ docker pull mysql/mysql-server
+$ docker pull cassandra
+$ docker pull postgres
+
+----
+
+== Miscelaneous
+Shows several useful commands for a daily job usage.
+
+[source,bash]
+----
+$ docker images
+$ docker ps
+----
+
+If you need to search for available *Docker Hub* images, you can use the 
+following command.
+
+[source,bash]
+----
+$ docker search mariadb
+----
+
+[NOTE]
+====
+This command will give you the names of images that are related to the 'mariadb'
+item.
+====
+
+[source,bash]
+----
+$ docker stop --time=30 mariadbtest <1>
+$ docker kill mariadbtest <2>
+$ docker rm mariadbtest <3>
+$ docker rm -v mariadbtest <4>
+$ docker logs mariadbtest <5>
+$ docker exec -it mariadbtest bash <6>
+----
+<1> Stop the container, the time of 30 will tell the daemon to wait this time to
+actually stop the container, if this parameter is not set, it stops immediately.
+<2> Kill the container.
+<3> Remove the container (any data is permanently lost).
+<4> Remove the internal volume data when the container was created.
+<5> Get container logs.
+<6> Accessing the container. This allows to see the internal folders, 
+environment, etc.
+
+Connecting Mariadb from outside the container.
+
+[source,bash]
+----
+$ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mariadbtest <1>
+----
+<1> locate the IP the container uses.
+
+Forcing a TCP Connection
+On the host, run the client and set the server address ("-h") to the container's IP address that you found in the previous step:
+
+[source,bash]
+----
+$ mysql -h 172.17.0.2 -u root -p
+$ mysql -h 172.17.0.2 -P 3306 --protocol=TCP -u root -p
+----
+
+When you need to create an image using the 'DockerFile' script, use the
+following command.
+
+[source,bash]
+----
+$ docker build -t [image-name]:[versiontag] . <1>
+----
+<1> The dot indicates the folder where the 'DockerFile' resides.
+
+If you need to explore the image files, use
+
+[source,bash]
+----
+$ docker exec -it [container-name-or-id] bash
+----

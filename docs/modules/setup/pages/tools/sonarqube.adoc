@@ -1,0 +1,10 @@
+= SonarQube
+
+include::partial$sonar-body.adoc[]
+
+
+SonarQube Intellij
+
+V6.7.x
+Problem with component_list.pb
+https://community.sonarsource.com/t/sonalint-invalid-binding-issue-because-of-component-list-pb/64828

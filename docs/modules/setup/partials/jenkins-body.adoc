@@ -1,0 +1,80 @@
+== Setup
+The first thing to do is to download the software to be installed. It is recommended
+that you grab the *Generic Java package (.war)* file in the Long-term Support (LTS) section.
+
+Once you have downloaded the *Generic Java package (.war)* open a shell window 
+to execute.
+
+[source,bash]
+----
+$ cd /path/to/war/file
+$ java -jar Jenkins.war --httpPort=7000 <1>
+----
+<1> Use this War file if not using a *_Docker_* image.
+
+The first time it will run a setup process it will show application log in 
+the terminal to see. 
+
+.Jenkins First Step Setup
+image::jenkins/001-setup-first-step.png[Jenkins First Step Setup,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[IMPORTANT]
+====
+This magic number shown in screen varies in your installation, notice as well that a file with that
+number was created in path shown in picture. Folder path is in Windows format, adjust to your Operating
+System accordingly.
+====
+
+Now you can go to http://localhost:7000 to continue with the configuration. The first time you access the
+site it will ask you for the secret number generated in the last step.
+
+.Jenkins Setup Unlock
+image::jenkins/002-setup-unlock.png[Jenkins Setup Unlock,700,700,scaledwidth=75%,pdfwidth=60%]
+
+After giving the initial admin password to unlock the installation, you are now ready to *Customize* Jenkins.
+
+.Jenkins Customize
+image::jenkins/003-customize-jenkins.png[Customize Jenkins,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Here it is recommended to install the suggested plugins.
+
+.Jenkins Suggested Plugins
+image::jenkins/004-suggested-plugins.png[Jenkins Suggested Plugins,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+All shown suggested Plugins must be successfully installed. Reject if they are not compatible with the *_Jenkins_* installation you are trying to configure.
+====
+
+Now it is time to register the super important rood admin user. Keep in mind that if you lose these 
+credentials then the system may be void, unless you have more admin users set.
+
+.Jenkins Create First Admin User
+image::jenkins/005-create-admin-user.png[Jenkins Create First Admin User,700,700,scaledwidth=75%,pdfwidth=60%]
+
+[NOTE]
+====
+Keep these credentials in a secure place.
+====
+
+When all data is filled, click in the *_Save and Continue_* button.
+
+.Jenkins Instance Configuration
+image::jenkins/006-instance-configuration.png[Jenkins Instance Configuration,700,700,scaledwidth=75%,pdfwidth=60%]
+
+This is the last step as the button *_Save and Finish_* button hints.
+
+.Jenkins is Ready
+image::jenkins/007-jenkins-ready.png[Jenkins is Ready,700,700,scaledwidth=75%,pdfwidth=60%]
+
+This concludes *_Jenkins Configuration_*.
+
+=== References
+Getting started with the Guided Tour
+https://jenkins.io/doc/pipeline/tour/getting-started/
+
+Introducing Tutorials in the Jenkins User Documentation 
+https://jenkins.io/blog/2017/11/27/tutorials-in-the-jenkins-user-documentation/
+
+Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes 
+https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/

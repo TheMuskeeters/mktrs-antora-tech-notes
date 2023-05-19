@@ -1,0 +1,5 @@
+= References
+
+== Java
+* October 26, 2020 link:https://developer.okta.com/blog/2020/10/26/java-intellij-idea[Why I Love IntelliJ IDEA for Java Development^] by Matt Raible
+* October 30, 2020 link:https://reflectoring.io/manage-jdks-with-jenv/[Managing Multiple JDK Installations With jEnv^] by Tom Hombergs

@@ -1,0 +1,6 @@
+= IntelliJ
+
+https://www.jetbrains.com/idea/[IntelliJ IDEA Site^]
+
+== Useful Plug in Setup
+xref:setup:tools/intellij-smart-tomcat.adoc[Smart Tomcat]

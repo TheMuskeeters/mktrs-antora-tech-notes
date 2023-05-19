@@ -1,0 +1,14 @@
+Open your *_Jenkins_* home page.
+
+.Jenkins Home Login
+image::jenkins/008-login.png[Jenkins Home Login,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Introduce your valid credentials and you will be presented with the main page.
+
+.Jenkins Home Page
+image::jenkins/009-main-dashboard.png[Jenkins Home Page,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Locate the option *_Manage Jenkins_* and next the option *_Global Tool Configuration_*.
+
+.Jenkins Manage Jenkins Global Tools
+image::jenkins/010-manage-jenkins.png[Jenkins Manage Jenkins Global Tools,700,700,scaledwidth=75%,pdfwidth=60%]

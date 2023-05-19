@@ -1,0 +1,3 @@
+= AsciiDoctor
+
+* *Awesome Asciidoctor: Using Conditional Directives* (http://mrhaki.blogspot.com/2014/08/awesome-asciidoc-using-conditional.html)

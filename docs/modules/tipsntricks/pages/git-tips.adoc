@@ -1,0 +1,22 @@
+= Git
+
+Here you can find some references to resources and general tips to a daily basis
+*Git* usage.
+
+* *Generating a new SSH key and adding it to the ssh-agent* (https://help.github.com/enterprise/2.11/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+* *SSH-KEYGEN - GENERATE A NEW SSH KEY* (https://www.ssh.com/ssh/keygen/)
+* *Running Bash scripts on Windows* (https://epsil.github.io/blog/2016/04/20/)
+* *Git Branch Tutorial* (https://www.atlassian.com/git/tutorials/using-branches)
+* *Keeping a fork up to date* (https://gist.github.com/CristinaSolana/1885435)
+
+https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork[Configuring a Remote for a Fork^]
+
+
+Writing middleware for use in Express apps
+https://expressjs.com/en/guide/writing-middleware.html
+
+Other topics include:
+
+* xref:tipsntricks:git-squash.adoc[Squashing commits]
+* xref:tipsntricks:git-config-diff-tool.adoc[Config Diff Tool]
+

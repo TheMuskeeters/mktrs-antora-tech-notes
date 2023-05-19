@@ -1,0 +1,148 @@
+= JDK
+
+== Certificates
+When you have installed and configured the *_JDK_*, you then need to install the
+SSL Certificate given the environment you need to interact with.
+
+The following instructions can be used only for setting the SSL Certicate for 
+the lower environments, namely, *_LATEST_*, *_STAGE_*, *_LOAD_*.
+
+We use the *LATEST* in this document. You can follow this template to replicate
+for the other environments, replacing the environment where appropriate.
+
+[TIP]
+====
+For reference you could use https://www.sslshopper.com/article-most-common-java-keytool-keystore-commands.html[The Most Common Java Keytool Keystore Commands^].
+====
+
+Open your web browser, here we will be using *Google Chrome Browser* and point 
+to any of the following URLs:
+
+* *LATEST:* https://dclapi-latest.wdw.disney.com/dcl-api/dcl-availability-service/voyages
+* *STAGE:* https://dclapi-stage.wdw.disney.com/dcl-api/dcl-availability-service/voyages
+* *LOAD:* https://dclapi-load.wdw.disney.com/dcl-api/dcl-availability-service/voyages
+
+You are presented with the following page.
+
+[NOTE]
+====
+The site we are using here refers to *'DCL API'*, so, we are registering 
+the certificates for calls to it.
+====
+
+.Google Chrome Grab SSL Certificate
+image::ssl-instructions/001-ssl-init-grab.png[Google Chrome Grab SSL Certificate]
+
+When you click the button indicated you are presented with options to select.
+
+.Google Chrome Grab SSL Certificate Init
+image::ssl-instructions/002-ssl-init-grab.png[Google Chrome Grab SSL Certificate Init]
+
+A pop up dialog will show and select the tab indicated as follows.
+
+.View Certificate
+image::ssl-instructions/003-ssl-view-certificate.png[View Certificate]
+
+And after you are in the *details* tab select the button shown next. 
+
+.Certificate Export
+image::ssl-instructions/004-ssl-view-certificate-export.png[Certificate Export]
+
+This will start the export to file process.
+
+.Init Certificate Export
+image::ssl-instructions/005-ssl-view-certificate-export.png[Init Certificate Export]
+
+Next you select the file format.
+
+.Certificate Format
+image::ssl-instructions/006-ssl-view-certificate-export-format-sel.png[Cetificate Format]
+
+Next think of a name for the certificate, lets use here *_latest-cert_*, the system assigns the extension *_cer_*, but you can use whatever name you consider.
+
+.Certificate Select File Name
+image::ssl-instructions/007-ssl-view-certificate-export-file-sel.png[Certificate Select File Name]
+
+Then before proceeding to the export the system will provide an overview summary.
+
+.Certificate Export Overview
+image::ssl-instructions/008-ssl-view-certificate-export-overview.png[Certificate Export Overview]
+
+After you click the *Finish* button it will report a successful export.
+
+.Certificate Successful Export
+image::ssl-instructions/009-ssl-view-certificate-export-successful.png[Certificate Successful Export]
+
+Now you must copy or reference the file in the following commands to import 
+the certificate to the *_JDK_* you want to use. 
+
+[IMPORTANT]
+====
+You need to have access rights to the *_JDK_* folder to complete these commands.
+====
+
+[NOTE]
+====
+The *_JDK_* cacerts file is located in the following path.
+
+* $JAVA_HOME/jre/lib/security for *_JDK_* 8 and below.
+* $JAVA_HOME/lib/security for *_JDK_* 11 and above.
+
+Here *JAVA_HOME* refers to the folder where the *'JDK'* is installed.
+====
+
+With the following code you import the certificate to the *_JDK_* cacerts.
+
+[source,bash]
+----
+$ keytool -import -alias disney-latest-cert -keystore cacerts -file latest-cert.cer
+----
+
+[WARNING]
+====
+When asked for the password, use the default password *changeit*, notice that 
+it should be changed if required.
+====
+
+[NOTE]
+====
+In the previous command, notice it uses an alias, *_disney-latest-cert_* and 
+here *_latest-cert.cer_* is the file you downloaded.
+
+Besides when you need to supply a password, type the *_changeit_*. When you see
+the question "Trust this certificate? [n]:", type *yes*.
+====
+
+And if you need to check that the certificate is imported, use the following command.
+
+[source,bash]
+----
+$ keytool -list -v -keystore cacerts -alias disney-latest-cert
+----
+
+If you need to replace a certificate, you must delete it first and add it again.
+
+[source,bash]
+----
+$ keytool -delete -alias disney-latest-cert -keystore cacerts
+----
+
+Finally, you must provide the *_Java Cryptography Extension (JCE) Unlimited
+Strength Jurisdiction Policy Files 8 Download_*. These files can be obtained
+from the following link: 
+https://www.oracle.com/java/technologies/javase-jce8-downloads.html[JCE Unlimited Strength Download^].
+
+Extract these files and copy them in the _[JAVA_HOME]/jre/lib/security_ folder, 
+for JDK 8 distribution.
+
+* _local_policy.jar_
+* _US_export_policy.jar_
+
+[WARNING]
+====
+In Java versions 8u151 and higher, the *JCE* framework uses the unlimited 
+strength by default 
+====
+
+== Referenes
+https://www.baeldung.com/jce-enable-unlimited-strength[Enabling Unlimited Strength Cryptography in Java]
