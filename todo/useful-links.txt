@@ -1,0 +1,39 @@
+Created:  May.22/2022
+Modified: Jul.13/2022
+
+https://time.is/
+https://www.worldtimebuddy.com/
+https://regexr.com/
+https://gitforwindows.org/
+
+Learn X in Y minutes 
+Where X=yaml
+https://learnxinyminutes.com/docs/yaml/
+
+Swagger Editor
+https://editor.swagger.io/
+
+JSON Schema
+https://json-schema.org/understanding-json-schema/index.html
+
+Complete Jenkins Tutorial | Learn Jenkins from Scratch in 3 Hours | LambdaTest
+https://www.youtube.com/watch?v=nCKxl7Q_20I
+
+Testing Kafka Applications with TestContainers | #LiveStreams S01E03
+https://www.youtube.com/watch?v=O968f81LTeY
+
+Jul.3/2022
+Kill All Docker Containers Using the CLI
+https://www.cloudbees.com/blog/how-to-kill-all-containers-in-docker
+
+Pair SonarLint with SonarQube and catch more issues before peer code review
+https://www.sonarqube.org/sonarlint/?referrer=sonarqube-welcome
+
+Jul.4/2022
+Configure visual studio code as a default git editor, diff tool, or merge tool
+https://medium.com/geekculture/configure-visual-studio-code-as-a-default-git-editor-diff-tool-or-merge-tool-291fd7088cc9
+
+
+Jul.13/2022
+Tweak Extension Docs.
+https://tweak-extension.com/docs/intro/

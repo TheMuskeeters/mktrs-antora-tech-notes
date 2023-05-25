@@ -1,0 +1,62 @@
+Created:  Sep.01/2022
+Modified: Oct.10/2022
+
+
+Follow this document for Exception Assertions https://www.baeldung.com/assertj-exception-assertion
+
+      @Test
+    @DisplayName("Get Voyage By Ship Code and Start Date (Negative)")
+    void shouldGetVoyageByShipCodeStartDateNegative() throws IOException {
+        var voyagesLookupdata = TestUtils.buildFromJsonFile(VOYAGES_LOOKUPDATA_JSON, LookupData.class);
+
+        when(lookupServiceRestFacade.getLookupData(any(), any())).thenReturn(voyagesLookupdata);
+        when(voyageCacheManager.get(any())).thenReturn(new Date());
+        when(voyageCacheManager.get(anyString())).thenReturn(null);
+        when(redisTemplate.boundHashOps(anyString())).thenReturn(boundHashOperations);
+        when(redisTemplate.boundHashOps(anyString()).keys()).thenReturn(new HashSet<>(Arrays.asList(cacheKey)));
+
+        dclVoyageCacheManager.load();
+
+        assertThatThrownBy(() -> dclVoyageCacheManager.getVoyageByShipCodeStartDate(mockShipCode, mockDate))
+            .isInstanceOfSatisfying(DCLAPIException.class, e -> {
+                assertThat(e.getErrorCode())
+                    .isNotNull()
+                    .endsWith(String.valueOf(INT_20102));
+            });
+
+        verify(lookupServiceRestFacade).getLookupData(any(), any());
+        verify(voyageCacheManager, times(THREE)).get(any());
+        verify(voyageCacheManager, times(THREE)).get(anyString());
+        verify(redisTemplate, times(TWO)).boundHashOps(anyString());
+    }           
+
+assertThatExceptionOfType(ExploreVasException.class)
+            .isThrownBy(() -> contentsMapper.getStateroomMappings(BAD_URL_FRIENDLY_ID_CASE_5, Boolean.FALSE, LANGUAGE, Boolean.FALSE, Boolean.TRUE, Boolean.FALSE))
+            .withMessageContaining(MISSING_MOCK);
+
+assertThatExceptionOfType(ExploreVasException.class)
+            .isThrownBy(()->dataAccessHelper.getContentFromWatcher(LANGUAGE, FAILED_CONCIERGE_DETAILS_PAGE, CONTENT_PAGE, Boolean.FALSE));
+
+
+assertThatExceptionOfType(ExploreVasException.class)
+            .isThrownBy(()->dataAccessHelper.getContentFromWatcher(LANGUAGE, FAILED_CONCIERGE_DETAILS_PAGE, CONTENT_PAGE, Boolean.FALSE))
+            .withMessageContaining(WATCHER_CONTENT_NOT_FOUND)
+            .extracting(ExploreVasException::getErrorCode)
+            .isEqualTo(NOT_FOUND_STATUS);
+
+-------------------------------------------------------------------------------------------------------------------------
+TO CHECK Some fields in the type.
+assertThat(voyage)
+            .isNotNull()
+            .satisfies(v -> {
+                assertThat(v.getVoyageId()).isEqualTo(validMockVoyageId);
+                assertThat(v.getShipCode()).isEqualTo(validMockShipCode);
+            });
+
+            assertThat(cacheKey)
+                .isNotNull()
+                .satisfies(key -> {
+                    assertThat(key.getValueFromCacheKeyId(KEY_GAM_PROFILE_ID)).isEqualToIgnoringCase(VALUE_GAM_PROFILE_ID);
+                    assertThat(key.getValueFromCacheKeyId(KEY_GAM_PROFILE_TYPE)).isEqualToIgnoringCase(VALUE_GAM_PROFILE_TYPE);
+                    assertThat(key.getValueFromCacheKeyId(KEY_INCLUDE_DISNEY_STREAMING)).isEqualToIgnoringCase(VALUE_INCLUDE_DISNEY_STREAMING);
+                });

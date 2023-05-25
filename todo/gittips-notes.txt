@@ -1,0 +1,21 @@
+Created:  Jun.16/2022
+Modified: Jul.06/2022
+
+Jun.16/2022
+Get First commit of a project
+$ git log $(git rev-list --max-parents=0 HEAD)
+
+Jul.06/2022
+$git add remote uppstrem <GITREPO>
+
+Aug.17/2022
+Git count commit
+To get a commit count for a revision (HEAD, master, a commit hash):
+$ git rev-list --count <revision>
+
+To get the commit count across all branches:
+
+$ git rev-list --all --count
+
+$ git checkout -b release-2022.8.2 --no-track upstream/release-2022.8.2
+

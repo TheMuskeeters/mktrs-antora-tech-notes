@@ -1,0 +1,23 @@
+Created: Dec.11/2022
+Modified: Dec.11/2022
+
+Problem: A listening port is in use. How to kill it?
+Solution:
+
+Open CMD terminal with administrative privileges
+
+in the terminal
+
+Example to kill port 8085
+> netstat -ano | findstr "PID :8085"
+It will show 
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:8085           0.0.0.0:0              LISTENING       25088
+  TCP    [::]:8085              [::]:0                 LISTENING       25088
+
+then type
+
+> taskkill /f /pid 14312
+
+NOTE: Number may vary.

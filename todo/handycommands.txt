@@ -1,0 +1,54 @@
+Created: Jul.1/2022
+Modified: Jul.1/2022
+
+SonarQube
+===============================================================================================================
+https://docs.sonarqube.org/latest/setup/get-started-2-minutes/
+
+docker run -d --name local-sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+
+===============================================================================================================
+
+
+REDIS
+===============================================================================================================
+$ docker run --name local-redis -d -p 6379:6379 redis:latest
+
+===============================================================================================================
+
+
+PostgreSQL
+===============================================================================================================
+Setting up PostgresSQL database using Docker Locally
+$ docker run  \
+  --name local-pg \
+  -d \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=S3cr31! \
+  -v ~/dbdata/postgresql/data:${HOME}/dbdata/postgresql/tmp \
+  -p 5432:5432 \
+  postgres
+
+NOTE: WINDOWS VERSION. Notice you have to put /var/lib/postgresql/data after colon.
+This is the target location inside the container.
+$ docker run  \
+  --name local-pg \
+  -d \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=S3cr31! \
+  -v c:/db/postgres/data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  postgres
+
+$ mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=Test \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=sqp_25ab9900598548a4f39ceb2cf0d1086a2f73baf1
+
+===============================================================================================================
+
+DOCKER
+===============================================================================================================
+docker rm $(docker ps -a) --> Need a way to list only the non running containers.
+
+===============================================================================================================

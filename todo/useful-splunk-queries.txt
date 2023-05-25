@@ -1,0 +1,73 @@
+Oct.12/2021
+
+Many many many Splunk Queries
+
+-------------------
+Oct.12/2021
+
+Check DVIC Account 
+
+index=*dcl* source="*lo*d*" Level=PERF Logger=com.wdpr.ee.loggingapi.filter.HttpLoggingFilter "*" NOT "/healthcheck" "*/dvic-account/*"
+| rename Identifiers.X-Page-Id as xPageId 
+| rename Identifiers.Correlation-Id as xCorrId 
+| rename Http-Attributes.Request-URI as request 
+| rename Http-Attributes.Response-Code as responseCode
+| rex "Boundary Time :(?<RTinSeconds>\d+) \(ns\)"
+| eval request=replace(request, "([\w\d]{8})-([\w\d]{4})-([\w\d]{4})-([\w\d]{4})-([\w\d]{12})", "<Id>")
+| eval request=replace(request, "sessions/([\w\d]{34})", "sessions/<Id>")
+| eval request=replace(request, "session/([\w\d]{34})", "session/<Id>")
+| eval request=replace(request, "/(DD|DF|DM|DW|WW)([0-9]{4})", "/<Id>")
+| eval request=replace(request, "/itineraries/([^/]+)/", "/itineraries/<Id>/")
+| eval request=replace(request, "/products/([^/]+)/itineraries", "/products/<Id>/itineraries")
+| eval request=replace(request, "=([0-9]+)", "=<Id>")
+| eval request=replace(request, "/([0-9]+)", "/<Id>")
+| eval request=replace(request, "_([0-9]+)", "_<Id>")
+| eval request=replace(request, "-([0-9]+)", "-<Id>")
+| eval RTinSeconds=round(RTinSeconds/1000000000, 2)
+| stats count,perc95(RTinSeconds) by request,responseCode | sort -responseCode
+
+--------------------------------------------------------
+Check PE Data
+index=dcl_productavail_vas source="*load*" Logger="com.wdpr.ee.loggingapi.filter.HttpLoggingFilter" NOT "/healthcheck*" | timechart count span=1d
+
+--------------------------------------------------------------
+
+Dec.02/2021
+The following is used to determine the status error code for 
+Special Offers Page
+
+index=dcl_sales_webapi conversationId correlationId NOT toggles-service |
+rex "correlationId\":\"(?<corrId>[0-9A-Za-z-]+)" |
+rex "conversationId\":\"(?<convId>[0-9A-Za-z-]+)" |
+transaction convId corrId  maxpause=5s endswith="statistics" |
+search "x-page-id\":\"*/special-offers/*" convId=* corrId=* |
+rex "WAM-Total-Time-ms\":(?<wamTotal_ms>\d+)" | 
+rex "WAM-Time-ms\":(?<wamTime_ms>\d+)" |
+rex "statusCode\":(?<status_code>\d+)" |
+rex "url\":\"(?<url_wam>/dcl-web-api/[\w\-/?&=_%.,:;]+)" |
+rex "method\":\"(?<method>\w+)" |
+eval error_response_bit=if(status_code>=400, 1, 0) |
+timechart count(status_code) by status_code |
+eval avg_sec=round(avg_sec/1000, 2) | 
+eval perc95_sec=round(perc95_sec/1000,2) | 
+eval errorPercent=round((errorPercent*100),2) |
+eval avgWam_sec=round(avgWam_sec/1000, 2) |
+rename avg_sec as "WAM Total avg(sec)" perc95_sec as "perc95 sec" avgWam_sec as "WAM avg(sec)"
+
+---------------------------------------------------------------
+
+Dec.20/2021
+Retrieves all BEARER from the app.
+NOTE: by putting the 'search authzToken=* we supress NULL results for this field.
+index=dcl_marketingoffers_svc source=*latest* 
+| rex "(?<authzToken>BEARER [^\"]+)" 
+| search authzToken=*
+| dedup authzToken
+| table authzToken
+
+Here we get logs for only that version.
+index=dcl_marketingoffers_svc source="*latest*" Identifiers.Version="2022.2.0-312"
+| rex "(?<authzToken>BEARER [^\"|^,]+)" 
+| search authzToken=*
+| dedup authzToken
+| table authzToken

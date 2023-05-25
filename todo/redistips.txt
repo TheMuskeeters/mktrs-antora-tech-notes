@@ -1,0 +1,4 @@
+File Created: Nov.23/2022
+
+How to work with Cluster Mode on Amazon ElastiCache for Redis
+https://aws.amazon.com/blogs/database/work-with-cluster-mode-on-amazon-elasticache-for-redis/

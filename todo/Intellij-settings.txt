@@ -1,0 +1,16 @@
+IntelliJ
+May.19/2022
+Open Settings Java Code Style   
+
+Settings>Editor>Code Style>Java (see changes of concern) -> Make a guide.
+
+Jun.15/2022
+Font Mono 
+
+Jul.03/2022
+Install SonarLint 6.7.x 
+
+Jul.11/2022
+Install Gradianto Plugin to change dark mode within the IDE with coloring
+schemes.
+

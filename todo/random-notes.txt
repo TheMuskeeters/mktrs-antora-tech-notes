@@ -1,0 +1,1819 @@
+-----------------------------------
+PINNED
+
+include::ROOT:partial$lorem-ipsum.adoc[]
+
+image::ssl-instructions/009-ssl-view-certificate-export-successful.png[Certificate Successful Export,700,700,scaledwidth=75%,pdfwidth=60%]
+
+Distribution List to tell everyone I'm OOO
+#WDAT DL-DCL Web Studios
+#WDAT DL-DCL Studio Kraken (REMOVED)
+#WDAT DL-DCL Studio Davy Jones 
+
+CLEAR Cache Template: https://myjira.disney.com/browse/DCLCOMSUST-3931
+==========
+END PINNED
+==========
+
+------------------------------------------------------------------------------------------
+TODO
+Modern Redis and Redis Stack Unleashed 
+https://www.udemy.com/course/redis-cloud/learn/lecture/30830458#overview
+
+OPENAPI Course (Jhon Tomson)
+https://www.udemy.com/course/openapi-beginner-to-guru/learn/lecture/16813680#overview
+
+Documenting a Spring REST API Using OpenAPI 3.0
+https://www.baeldung.com/spring-rest-openapi-documentation
+
+Spring boot : Migrating from Springfox Swagger 2 to Springdoc OpenAPI 3
+https://deepak-shinde.medium.com/migrating-from-springfox-swagger-2-to-springdoc-openapi-3-79a79757b8d1
+
+Swagger UI (Not sure if it is OPENAPI compliant)
+https://swagger.io/tools/swagger-ui/
+
+Cucumber Tests in Spring Boot with Dependency Injection
+https://thepracticaldeveloper.com/cucumber-tests-spring-boot-dependency-injection/
+
+How To Rename a Local and Remote Git Branch
+https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/
+
+The Spring Boot Starter Parent
+https://www.baeldung.com/spring-boot-starter-parent
+
+How To Prepare for an API Pentest – Insomnia
+https://www.whiteoaksecurity.com/blog/how-to-prepare-for-an-api-pentest-insomnia/
+
+JVM Metrics
+https://documentation.softwareag.com/webmethods/microservices_container/msc10-7/10-7_MSC_PIE_webhelp/index.html#page/integration-server-integrated-webhelp/co-intro_new_IS_admin_6.html
+
+Java Platform Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide
+https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html
+
+Documenting a Spring REST API Using OpenAPI 3.0
+https://www.baeldung.com/spring-rest-openapi-documentation
+
+Error Handling for REST with Spring
+https://www.baeldung.com/exception-handling-for-rest-with-spring
+
+springdoc-openapi v1.6.8
+https://springdoc.org/
+
+------------------------------------------------------------------------------------------
+Important GSheet files
+
+2022 Validate Jira tickets 
+https://docs.google.com/spreadsheets/d/12hnmD1CTjuvtcNEVLrQS8sxxfY8TkIkdcV8p0W_yf5o/edit#gid=0
+
+Marketing Offers SVC - Pending endpoints to migrate
+https://docs.google.com/spreadsheets/d/1YPhqPt_UnGNS9_H8yAxjwHn0g0eG_7A-5oerV1jP6G4/edit#gid=0
+
+DCL Java apps spring version check (POM)
+https://docs.google.com/spreadsheets/d/1fuqlcRhqo02tmvzLlKf_zDGHb1LbvQHpQB0jprkVtEA/edit#gid=0
+
+UserLogins
+https://docs.google.com/spreadsheets/d/1leF23aGBjGix8rAD4Dy64RQ7wn6dAn3VvlA41MU6Yrc/edit#gid=1210332629
+
+Release 2022.2 SW Full Validations
+https://docs.google.com/spreadsheets/d/1Ar5cBOMykfgvuy5cGJnLlhTiOE0Gm9Zbdj-dckbKjOM/edit#gid=0
+
+KEYWORDS
+________
+AWS, AppD, AWS, CLI, PIP on Windows, SNOW Dashboard, GITHUBTIP, SPLUNKTIP,
+MAVENTIP, APPDTIP, TOMCATTIP, WIKITIP, NIMBUSTIP, JVMTIP, PAVAS, PASVC,
+PAVAS/PASVC, Log4ShellVulnerability, LOGGTIP, SNOWINCS, KrakenTIPS, SNOWTIP,
+DOCKERTIP, APPTIP, SAILINGAVAILSVC, SNOWCATALOG, REDISTIP, GDOCS,
+DCLHistory, DocumentationTIPS, MONITORTIP, UNPINNED, RA-LINKS, NEXUS, GITTIP,
+SONARLINT, BIZLOGICTIP, PROFILETIP, DCLFLOWTIP, DFMTIP, JAVATIP
+-----------------------------------
+Splunk link for proper Dashboards my user.
+
+https://stage.splunk.wdprapps.disney.com/en-US/app/launcher/dashboards
+
+--------------------------------------------------------------------------------
+BACKLOG activities (Mar.23/2022)
+TODO
+Document how to create an alert in Splunk and -> Trigger in SLACK
+Document how to edit an alert in Splunk
+--------------------------------------------------------------------------------
+
+Nov.11/2020
+We are working on the ECS migration to some L&S applications, and right 
+now we are doing a scream test in order to check the ECS migration on latest 
+environment. So could you please update the "dclm-reservation-svc" 
+application to use the following URLs:
+
+Cruise Sales Service
+OLD
+https://latest.dclcsssvc.wdprapps.disney.com/cruise-sales-service
+NEW --> DCL Marketing Offers SVC
+https://latest.dcl-caap.wdprapps.disney.com/dcl-apps-marketingoffers-svc
+
+Cruise Booking Service
+OLD
+https://latest.dclcbssvc.wdprapps.disney.com/cruise-booking-service
+NEW -> DCL Sailing Checkout VAS
+https://latest.disneycruise.disney.go.com/dcl-apps-sailingcheckout-vas
+
+Cruise Activity Booking Service
+OLD
+https://latest.dclactivitysvc.wdprapps.disney.com/cruise-activity-booking-service
+NEW --> DCL Activity Booking Service 
+https://latest.dcl-caap.wdprapps.disney.com/dcl-apps-activitybooking-svc
+
+That change would be only in latest environment.
+
+-------------------------------------------------------------------------------------
+Document the SLACK creation process. Again. This time because of capturing
+the images.
+https://docs.google.com/document/d/1Lj4TQMPu5oCHAd12Uo-_3kTuE_D7P6YN9V8mc5mt2yY/edit
+
+----------
+
+Nov.25/2020
+
+SCV->Sailing Checkout VAS 
+https://latest.disneycruise.disney.go.com/dcl-apps-sailingcheckout-vas/health/deep
+
+SCV->SCOV->DCL Sailing Checkout VAS
+
+---
+Nov.26/2020
+DCL Marketing Offer SVC --> CSS NEW
+https://latest.dcl-caap.wdprapps.disney.com/dcl-apps-marketingoffers-svc/healthcheck
+https://latest.dcl-caap.wdprapps.disney.com/dcl-apps-marketingoffers-svc/health/deep
+
+Dec.4/2020
+mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=https://sonar.cicd.wdprapps.disney.com -Dsonar.branch.name=YOUR_HUBID -Dsonar.login=YOUR_SONAR_TOKEN
+mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar -Dsonar.host.url=https://sonar.cicd.wdprapps.disney.com
+
+--- Configure sonar locally via Docker
+
+============================================================================================================
+SNOWCATALOG
+
+CICD Link to create a RITM to them
+https://disney.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D1e53db94dbde7240d077f1431d961911
+
+Order Guide - DPEP | Platform Tools Monitoring Services
+https://disney.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_guide_view.do%3Fv%3D1%26sysparm_initial%3Dtrue%26sysparm_guide%3Debcf5d57db1427c0d3839696db961953%26sysparm_link_parent%3D9685a352dbe3af44403c51d7f4961929%26sysparm_catalog%3D5a207f1713671b44797231f18144b01d%26sysparm_catalog_view%3Dcatalog_IT_Customer_Services%26sysparm_view%3Dtext_search
+
+---
+Dec.05/2020
+
+curl start.spring.io/actuator/info | jq '.["bom-ranges"]["spring-cloud"]'
+
+*******************************************************************************
+Jan.06/2021
+MAVENTIP
+mvn dependency:tree -Dverbose -Dincludes=log4j-slf4j-impl
+
+---
+To retrieve RELEASE toggles for an app in LIst Service.
+http://listservice.wdprapps.disney.com/lists-service/configurations/MODEL_TOGGLES_DCL/MyResRelease.ini
+
+Check release toggles for Itinerary SPA (wonder if this is its name)
+https://disneycruise.disney.go.com/my-disney-cruise/my-reservations/angular-debug/spa/
+
+
+---> DOCUMENT how to install ANTORA, 
+-----> NVM install. https://itnext.io/nvm-the-easiest-way-to-switch-node-js-environments-on-your-machine-in-a-flash-17babb7d5f1b
+-----> NodeJS
+-----> 
+
+----
+Jan.25/2021
+Code Promotion Process
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DTD&title=Code+Promotion+Process
+
+
+Remove these cookies to simultate Login TimeOut expiration
+SWID
+pep_jwt_token
+pep_oauth_token
+isLoggedIn
+
+Jan.27/2021
+Resolving conflicts using the dependency tree
+https://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html
+
+
+Feb.04/2021
+Document what I learned about THEMED with Michelle
+
+Document What I learned in DCLCOMSUST-1701 about avatars
+
+LIST of all Avatars -> GET https://api.wdpro.disney.go.com/bulk-service/snapshot/avatars-all
+From Explorer Service.
+
+
+Feb.12/2021
+================================================================
+
+- Document how to hack AWS to add DCL APPs role (kk)
+- Document how to get the Kinesis Stream name
+-- Diego Get CartID for Guest
+
+curl --location --request GET 'https://latest.disneycruise.disney.go.com/dcl-apps-sailingcheckout-vas/carts?userIdentityType=GUEST&userIdentityId=%7B1A2FB6E3-E8E2-4FEC-BD1C-CDC269747A58%7D&userIdentityIdType=SWID' \
+--header 'Content-Type: application/json' \
+--header 'Postman-Token: 2897081c-8f26-446d-acab-315feb96bbb0' \
+--header 'cache-control: no-cache' \
+--header 'Authorization: Bearer f7c3f3995a5d454ab1c63d143d4df5ac' \
+'
+
+
+Feb.19/2021
+================================================================
+In KSUST Channel look the -> como conectarse a AWS Management Console saved item
+Look also for saved to -> Qbox HES -> Shards Explanation (Martin Roldan - DM)
+                       ->  the Shard concept here (Priyanka Duggirala - DM)
+
+To create CHG...
+https://mywiki.disney.com/display/DTD/GitHub+Release+and+Promotion+Process
+
+https://mywiki.disney.com/display/DTD/Open+CHG+Ticket+for+DCL+Prod+Environments
+
+https://disney.service-now.com/
+
+
+Feb.23/2021
+================================================================
+Use My notes on Jira Ticket DCLCOMSUST-1723 (and companion)
+"g:\My Drive\Disney\Kraken\Tickets\DCLCOMSUST-1723\.." 
+To document the kinesis, shards, and some splunk queries 
+Using DCL Sailing Res Apps (may be extended to others.)
+
+Save item to Shards info
+https://disney.slack.com/archives/DJE6NKH4J/p1613493405004600
+
+Integrating Splunk with Amazon Kinesis Streams | Amazon Web Services
+https://aws.amazon.com/blogs/big-data/integrating-splunk-with-amazon-kinesis-streams/
+
+Optimizing Elasticsearch: How Many Shards per Index? | Qbox HES
+https://qbox.io/blog/optimizing-elasticsearch-how-many-shards-per-index
+
+dcl-sales-S0001400-use1-prd
+
+Feb.24/2021
+Follow https://disney.slack.com/archives/C04NCJTGM/p1605283461071200 to create
+a ticket for adding a clientId for APP, and scopes
+
+Mar.2/2021
+Useful Splunk Queries.
+
+index=dcl_marketingoffers_svc "<--- HTTP 4* *lists-service/configurations/MODEL_DCL_SAILING_CONFIGURATION"
+
+Splunk Query to measure ingestion latency.
+index=dcl_sailing_apps | eval indexed_time=strftime(_indextime,"%+")
+| eval latency=_indextime-_time
+| table _time,indexed_time,latency
+
+
+Evaluates content is ingested in Sailing Res Apps.
+index=dcl_sailing_apps Logger="com.wdpr.ee.loggingapi.filter.HttpLoggingFilter" Level=PERF NOT  "/*/healthcheck"
+| eval source=replace(source, "us-east-1:dcl-sales-S0001400-use1-prd-applogs:dclslngres-svc-prod/dclslngres-svc/(.*)", "dclslngres-svc")
+| eval source=replace(source, "us-east-1:dcl-sales-S0001400-use1-prd-applogs:dclsailres-api-prod/dclsailres-api/(.*)", "dclsailres-api")
+| eval source=replace(source, "us-east-1:dcl-sales-S0001400-use1-prd-applogs:dclsesmgr-svc-prod/dclsesmgr-svc/(.*)", "dclsesmgr-svc")
+| eval source=replace(source, "us-east-1:dcl-sales-S0001400-use1-prd-applogs:dcltrvlprty-svc-prod/dcltrvlprty-svc/(.*)", "dcltrvlprty-svc")
+| eval source=replace(source, "us-east-1:dcl-sales-S0001400-use1-prd-applogs:dclplchldr-svc-prod/dclplchldr-svc/(.*)", "dcltrvlprty-svc")
+| timechart span=1m count by source
+
+I don't remember why this Query ??? ->
+Gives me the amount of records in the whole index.
+index=dcl_marketingoffers_svc  
+| stats count by source 
+| table source count 
+| eval temp = split(source,":") 
+| eval sourcename = mvindex(temp, 0) + ":" + mvindex(temp, 1)  
+| table source sourcename count 
+| stats sum(count) by sourcename
+
+Document 
+Slack User Group Creation
+https://docs.google.com/document/d/1Lj4TQMPu5oCHAd12Uo-_3kTuE_D7P6YN9V8mc5mt2yY/edit
+
+Travel Trade and Cast Migration General Info and Test Data.
+https://docs.google.com/spreadsheets/d/1UaFROd4tdXZQGsErffN4TzBque5cf2-mkCPMImQmO_Y/edit?skip_itp2_check=true&pli=1#gid=1027979771
+
+
+Mar.03/2021
+CLR
+
+curl 'https://lt01.disneycruise.disney.go.com/dcl-cruise-101-webapi/product-availability/quick-quote-filter-options/' \
+  -H 'Referer: https://lt01.disneycruise.disney.go.com/' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36' \
+  --compressed
+
+Calls underneath 
+https://load.dcl-caap.wdprapps.disney.com/dcl-apps-marketingoffers-svc/view-assembly/marketing-offers/sailings-list?storeId=DCL&region=INTL
+
+Which calls underneath.
+curl --location --request GET 'https://dclapi-load.wdw.disney.com/dcl-api/dcl-availability-service/voyages-list?type=PROMO'
+
+See DCLCOMSUST-1803
+
+Mar.04/2021
+Docker
+
+docker run -d --name redis-latest
+docker run -p 8080:8080 --link redis-latest --env-file "c:\dev\properyoverrides\latest\mosvc\latest\css.properties" dcl-apps-marketingoffers-svc:v1
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker build -t dcl-apps-marketingoffers-svc:v1 .
+
+docker image rm id
+docker image redis:latest
+
+Mar.12/2021
+Use this query to view events in a table view instead.
+index=* source="*stage*" "ortic140-20210312-convid-20"
+| table Date, index, Identifiers.X-Page-Id, Http-Attributes.Request-URI, Http-Attributes.Query-Params, Level,  Msg, Level, Logger
+
+Apr.20/2021
+Oscar Herrera, check for
+CTASK6455751 (it is saved in my slack items)
+
+Apr.24/2021
+DCL Tech Uplift
+https://mywiki.disney.com/display/DCL/DCL+Tech+Uplift
+
+Apr.29/2021
+Splunk Measure Latency ingestion
+
+index=dcl_sales_webapi | eval indexed_time=strftime(_indextime,"%+")
+| eval latency=_indextime-_time
+| table _time,indexed_time,latency
+
+May.11/2021
+Document Splunk Alert.
+PROD
+DCL.DL-Web.Global.Cruise.Sales@disney.com
+
+QA
+WDAT.DL-DCL.Tech.Web.Alerts@disney.com
+
+May.19/2021
+Document https://mywiki.disney.com/display/DCL/Tokens%2C+client_id%2C+client_secret+-+How+to+use+them in Antora.
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLCOMENHA&title=Future+Cruise+Credit
+
+May.20/2021
+Keep this handy ContentSquare
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+ContentSquare
+
+
+maiden voyage -> Inaugural Trip
+
+May.21/2021
+To check EB for sailings read DCL API or MOSVC Read element for the object
+$[0].value.earlyBookingAffiliations
+
+Of course you need to send the Affiliations parameter.
+
+May.22/2021
+- Make an Insomnia Guide (started actually)-> DONE!
+
+Jun.08/2021
+LT IAB Load Test Statistics
+https://stage.splunk.wdprapps.disney.com/en-US/app/launcher/lt_iab_load_test_statistics?form.timeRange.earliest=1622712314&form.timeRange.latest=1622715915.479&form.slaFile=DCL_SLA.csv&form.ltiabApp=LTIAB_DCL_*&form.txnPfx=TXN&form.slaDeviationThreshold=1&form.txnPrefix=TXN
+
+Jun.09/2021
+Captain Hook
+url = git@github.disney.com:dcl-applications/dcl-apps-capnhook-svc.git 
+
+Captain Hook → brandon.potter@disney.com
+Channel #wdpr-soleng
+AG: ops-global-dse-soleng
+
+aws : https://console.aws.amazon.com/ecs/home?region=us-east-1#/clusters/dcl-apps-S0001400-use1-prd/services
+svc name : capnhook-svc-prod-live
+
+as well this next link
+https://disney.slack.com/archives/G932G7W3V/p1623420385485600 ->Ant man scope.
+
+Jun.09/2021
+To setup PA SPA, Cruise 101 WebApi, PAVAS, PASVC locally 
+
+Follow https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLCOMENHA&title=DCL+Product+Avail+SPA
+for PA SPA, Cruise 101 WebApi
+
+Start Redis Service
+Start PASVC
+Start PAVAS
+
+Start Cruise 101 WebApi
+$ npm run start
+
+Start PA SPA
+$ npm run start:dev
+
+Jun.09/2021
+CI CD setup, Nexus
+https://confluence.disney.com/display/wdprteecd/CICD+-+Setup+Your+Development+Environment+For+Nexus+3.0
+
+Jun.10/2021
+To include in PAVAS or PASVC
+
+Hey Charlie, /prices/lowest/products is the endpoint called by available-products
+of PAVAS in order to retrieve the list of products card available. 
+/prices/lowest/products/3_bahamian_port_canaveral/itineraries/GOC,NAS/sailings 
+is the endpoint called by available-sailings of PAVAS to retrieve the list of
+sailings for a specific product and itinerary
+available-features is a new endpoint for Featured Cruises Solution.. 
+it would be a new section inside cruise listing page to show additional 
+cruises according to user's geolocation and castaway affiliation
+
+Jun.11/2021
+Customer Engagement(CE) part of Global Marketing;  D3 is the main data warehouse 
+(Disney Data Diffgit git aerence) ; curs_ord is a table in D3 with DCL data
+--> See https://disney.slack.com/archives/C09E2DMSP/p1623440977089700?thread_ts=1623423822.083600&cid=C09E2DMSP
+
+
+Jun.15/2021
+Cruise 101 Sequence Diagram
+https://mywiki.disney.com/display/DCL/Cruise+101+Sequence+Diagram
+
+Curso Java Básico
+https://www.udemy.com/course/universidad-java-especialista-en-java-desde-cero-a-master/?couponCode=GM_ONCE
+
+Jun.16
+LOGIN TA Credentials
+4075667000
+11112222
+Reservation ID:29581133
+DOB: 1980-01-01
+
+Jun.17/2021
+See this slack SHARE Pwd.
+https://disney.slack.com/archives/C04NCJTGM/p1623940237479900
+
+---> It is https://csm.wdprapps.disney.com/otv/share
+
+
+Jun.28/2021
+SNOWTIP
+Create RITM for AWS 
+Request changes to AWS cloud infrastructure provisioning or configuration variables
+https://disney.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D9e117eb5dbcce70099bc9e26db961929
+
+DCL ContentSquare (KEEP an eye)
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+ContentSquare
+
+Jul.08/2021
+To document the steps required to make up and running the MAVEN/sonar
+https://sonar.cicd.wdprapps.disney.com/account/security/ -> To generate the User.Login token 
+required in Maven Settings.xml file.
+
+To ask for Nexus rights for SAPID or HUBID.
+https://nexustools.disney.com/#/
+
+NOTE: When generating the maven user for settings, login with the HUBID to generate instead of the email.
+
+Jul.09/2021
+RITM to request access for Splunk/SiteScope/AppD
+https://disney.service-now.com/DToolsIT/catalog_detail.do?sysparm_document_key=sc_cat_item_guide,ebcf5d57db1427c0d3839696db961953
+
+Jul.14/2021
+Amazon Kinesis Data Streams Terminology and Concepts
+https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html
+
+Jul.20/2021
+Ariel Vera
+
+Cast Migration - Triaging
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLTTM&title=Cast+Migration+-+Triaging
+KEEP this in mind.
+
+Aug.9/2021
+PAVAS/PASVC
+When you download the project
+PAVAS is set in application.yml as server.port=8080
+PASVC is set in application.yml as server.port=8081
+
+In the project configuration the contxt is not explicit set. So you set it 
+as an Environment variable (Edit IntelliJ Config)  and edit environment 
+variables
+
+For PAVAS set it to
+server.servlet.context-path=/dcl-apps-productavail-vas
+
+for PASVC set it to 
+server.servlet.context-path=/dcl-apps-productavail-svc
+
+Or if you prefer set this property in the application.yml.
+
+In PAVAS to set it to point to PASVC locally set it to
+
+  "_comment": "Product Availability Service",
+  "product.availability.service.url": "http://localhost:8081/dcl-apps-productavail-svc/",
+
+In app.properties.json
+
+NORMALLY it is set as follows
+
+  "_comment": "Product Availability Service",
+  "product.availability.service.url": "https://latest.dcl-caap.wdprapps.disney.com/dcl-apps-productavail-svc/",
+
+
+-----------------
+Document GIT SSH registration.
+
+
+Aug.17/2021
+When documenting the Maven Setup use these links to guide the process through.
+
+MAVENTIP
+https://confluence.disney.com/pages/viewpage.action?spaceKey=wdprteecd&title=CICD+-+Setup+Your+Development+Environment+For+Nexus+3.0
+https://nexustools.disney.com/#/
+
+
+TIP
+Spring Boot 1.x .-> server.contextPath=/dcl-sailing-res-webapi
+Spring Boot 2.x .-> server.servlet.context-path=/dcl-sailing-res-webapi
+
+https://latest.disneycruise.disney.go.com/cruise-booking-down/ -> A health monitor is false ->Capabilities
+https://latest.disneycruise.disney.go.com/cruise-booking-is-down/ -> DFM Manually set by producers.
+
+
+
+Follow https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.properties-and-configuration
+when not using a starter to set automatic Property Expansion Using Maven.
+
+Aug.18/2021
+Put in DCL Sailing Res WebAPI README (and by the way document it properly)
+Swagger
+https://latest.dcl-caap-sailingres-api.wdprapps.disney.com/dcl-sailing-res-webapi/swagger-ui.html#/
+
+
+Aug.26/2021
+AppD for DBSWAccess in LT
+https://disney-preprod.saas.appdynamics.com/controller/#/location=APP_COMPONENT_MANAGER&timeRange=last_1_hour.BEFORE_NOW.-1.-1.60&application=3242&component=7502815&dashboardMode=grid
+
+Name: core_apps-S0001400_dbasvc
+
+
+Follow this link for a Link for the DCL Components Diagram
+https://disney.slack.com/archives/C04NCJTGM/p1629903488403700
+CRUISE as a Platform -> https://disney.slack.com/archives/C04NCJTGM/p1629903488403700
+https://app.diagrams.net/#G1mk_0SuDYpn6HedRuN6RolQaKeiVkolT9
+
+
+Aug.31/2021
+PASVC Wiki to read
+https://mywiki.disney.com/pages/viewpage.action?pageId=466480945
+
+PAVAS Wiki to read
+https://mywiki.disney.com/display/DTD/DCL+Product+Availability+VAS
+
+MOSVC
+https://mywiki.disney.com/display/DTD/DCL+Marketing+Offers+Service
+
+
+Sep.01/2021
+Online Tech Studios Wiki
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=ROS&title=Online+Tech+Studios+-+a+List+of+Studios+and+Resources
+
+
+DIEGO Health Monitor documents to bear in mind.
+https://disney.slack.com/archives/C04NCJTGM/p1630534145119900
+
+
+Sep.02/2021
+DCL APP Migration - Initialize Cruise Reservation Payment Session
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+APP+Migration+-+Initialize+Cruise+Reservation+Payment+Session
+
+
+Sep.3/2021
+DOCKER TUTORIAL -> Cassandra
+https://www.datastax.com/learn/apache-cassandra-operations-in-kubernetes/running-a-cassandra-application-in-docker#docker-compose
+
+From this tutorial... Some commands
+
+$ docker network create cass-cluster-network
+$ docker pull cassandra
+$ docker run -d --name nodeA --network cass-cluster-network cassandra 
+$ docker pull datastaxdevs/petclinic-backend
+$ docker run -d \
+    --name backend \
+    --network cass-cluster-network \
+    -p 9966:9966 \
+    -e CASSANDRA_USE_ASTRA=false \
+    -e CASSANDRA_USER=cassandra \
+    -e CASSANDRA_PASSWORD=cassandra \
+    -e CASSANDRA_LOCAL_DC=datacenter1 \
+    -e CASSANDRA_CONTACT_POINTS=nodeA:9042 \
+    -e CASSANDRA_KEYSPACE_CQL="CREATE KEYSPACE spring_petclinic WITH REPLICATION = {'class':'SimpleStrategy','replication_factor':1};" \
+    datastaxdevs/petclinic-backend
+
+$ curl -X GET "http://localhost:9966/petclinic/api/pettypes" -H "accept: application/json" | jq
+$ curl -X POST \
+   "http://localhost:9966/petclinic/api/pettypes" \
+   -H "accept: application/json" \
+   -H "Content-Type: application/json" \
+   -d "{ \"id\": \"unicorn\", \"name\": \"unicorn\"}" | jq
+$ docker exec -it nodeA cqlsh
+USE spring_petclinic;
+SELECT * FROM petclinic_reference_lists WHERE list_name='pet_type';
+QUIT;
+$ docker pull datastaxdevs/petclinic-frontend-nodejs
+$ docker run -d --name frontend -p 8080:8080 -e URL=https://2886795284-9966-jago04.environments.katacoda.com datastaxdevs/petclinic-frontend-nodejs
+$ clear
+$ docker ps --format '{{.ID}}\t{{.Names}}\t{{.Image}}'
+$ docker stop $(docker ps -aq) -> Stops but don't remove containers.
+$ docker rm $(docker ps -aq) --> Removes containers.
+
+docker-compose.yaml
+version: '3.3'
+
+services:
+  
+  db:
+    image: cassandra
+
+  microservice:
+    image: datastaxdevs/petclinic-backend
+    restart: on-failure
+    ports:
+      - 9966:9966
+    depends_on:
+      - db
+    environment:
+      CASSANDRA_USE_ASTRA: "false" 
+      CASSANDRA_USER: "cassandra" 
+      CASSANDRA_PASSWORD: "cassandra" 
+      CASSANDRA_LOCAL_DC: "datacenter1" 
+      CASSANDRA_CONTACT_POINTS: "db:9042"
+      CASSANDRA_KEYSPACE_CQL: "CREATE KEYSPACE spring_petclinic WITH REPLICATION = {'class':'SimpleStrategy','replication_factor':1};" 
+      MONITORING_PROMETHEUS: "false"
+      DISTRIBUTED_TRACING_ENABLED: "false"
+
+  webapp:
+    image: datastaxdevs/petclinic-frontend-nodejs
+    ports:
+      - 8080:8080
+    depends_on: 
+      - microservice
+    environment: 
+      URL: KATACODA-URL
+
+
+
+CAST Members
+https://idp.myid-stg.disney.com/as/authorization.oauth2?client_id=TWDC.DCL.CruiseSales.Staging&response_type=token&redirect_uri=https://stage.disneycruise.disney.go.com/special-offers/&nonce=APPLICATION_GENERATED_ONE_TIME_NONCE&scope=openid+profile+email+relationship+address+id
+X-Disney-Internal-Cast-Validation set it to false
+
+Cast Migration - Triaging
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLTTM&title=Cast+Migration+-+Triaging
+
+
+OTHER stuff
+DCL Web Architecture
+https://mywiki.disney.com/display/DCL/DCL+WEB+ARCHITECTURE
+
+DCL Services Documentation
+https://mywiki.disney.com/display/DTD/DCL+Services+Documentation
+
+BOOKIN Flow Architecture
+https://mywiki.disney.com/display/DCL/Booking+Flow+Architecture
+
+Sep.6/2021
+See https://myjira.disney.com/browse/DCLCOMSUST-2406
+Retrieve Instant Card Application
+https://confluence.disney.com/pages/viewpage.action?spaceKey=CAP&title=Retrieve+Instant+Card+Application
+
+Sep.13/2021
+WIKITIP
+DPay Test Credt Cards
+https://confluence.disney.com/pages/viewpage.action?spaceKey=Payments&title=DPAY+Test+Credit+Cards#6417983196f5ec580c35e4a6088eb8d9794015335
+Number: 4440000042200014
+Brand: Visa
+Code: 123
+Exp: 12/25
+Address Line #1: 999 3DS Lane
+Postal Code: 92808
+City: Anaheim | California | Yorba Linda
+State: California
+
+
+Sep.14/2021 ---> See https://myjira.disney.com/browse/DCLCOMSUST-2622
+
+WDW GAM Affiliations - Provide Guest Affiliations By Guest ID
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=GAM&title=WDW+GAM+Affiliations+-+Provide+Guest+Affiliations+By+Guest+ID
+
+Sample curl -> LOAD --> GAM
+curl --request GET \
+  --url 'https://load.gam-apigw.wdprapps.disney.com/assembly/guestAffiliations?guest-id-type=swid&guest-id-value=%7BAB41291D-1F9D-4CC9-9529-7796CDECE0F3%7D&site=ALL&managed-guest=yes' \
+  --header 'Authorization: BEARER MASKED'
+
+Link to create RITM permissions for Sonar
+https://disney.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D1e53db94dbde7240d077f1431d961911
+Fill fields as 
+Service Requested: Other Request or CICD Question
+Preferred Contact Number: (any number)
+Applicable Name/Repo Name: (Write any repo name example )
+Brief Description: Please add me to the dcl-booking-svc-users sonar group.
+Additional comments: Please add me to the dcl-booking-svc-users sonar group.
+
+Sep.16/2021
+Tokens, client_id, client_secret - How to use them
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=Tokens%2C+client_id%2C+client_secret+-+How+to+use+them
+
+Sep.17/2021
+SPLUNK
+Use the following to know if a STREAM is created using Cribl
+index=dcl_amenities_svc
+| stats count by stream
+
+AWS -> Console, CloudWatch, Kinesis
+AppD
+Splunk
+
+Sep.20/2021
+localeCookie_jar_aka
+languageSelection_jar_aka
+
+Sep.28/2021
+PASVC and PAVAS Wikis at handy
+
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLCOMCLRE&title=DCL+Product+Availability+SVC
+
+https://mywiki.disney.com/display/DCLCOMCLRE/DCL+Product+Availability+VAS
+
+
+
+Swagger
+https://myjira.disney.com/browse/DCLCOMTECH-295
+
+
+Sep.29/2021
+Splunk Query
+Connection Pool Shut Down
+index=*dcl* "Connection pool shut down"  | timechart count span=1m
+
+Oct.6/2021
+WHen DFM is activated, do these to access the site in a controlled way.
+As a refresher, to test behind the DFM, go here: https://disneycruise.disney.go.com/dcl-sailing-res-spa/angular-debug/demo
+Click on "Avoid DFM Validations Sales Spa" and "Avoid DFM validation Sailing Res Spa"
+
+Oct.10/2021
+Links Order India Team Rampup
+
+Checklist - Sustainment
+https://docs.google.com/spreadsheets/d/10w8EVOGdwdciRMAXJTUqUdBhh75Sq4yP_sL00ZKRqJU/edit#gid=744307326
+
+Disney - Onboarding New Members
+https://docs.google.com/document/d/1qd-EE_rYa-a3kUx9TXfJG-tw8ac-ZEzTgt4_NHJ6NAA/edit#
+
+Vacations, Holidays, Overtime and On Call Schedule
+https://docs.google.com/spreadsheets/d/1vsS9Do5GqhUZzw8b3lEbnPwndGPy5KcDTnDnAevAyhg/edit#gid=1242120119
+
+C3PO | Nimbus UI Access Request
+https://myjira.disney.com/browse/COM-31898
+
+DCL Sales Sustainment
+https://mywiki.disney.com/display/DCL/DCL+Sales+Sustainment
+
+Basic Check List (KSUST)
+https://mywiki.disney.com/display/DCL/Basic+checklist
+
+RITM to request Google Workspace account (But how to create REQ)
+https://disney.service-now.com/nav_to.do?uri=%2Fsc_req_item.do%3Fsys_id%3D89cad2921b91bcd414010e966e4bcb4c%26sysparm_stack%3D%26sysparm_view%3D
+
+AppDynamics permissions and Splunk
+https://mywiki.disney.com/display/DCL/AppDynamics+permissions
+
+
+AWS Login
+http://aws.wdprapps.disney.com/
+
+AWS Cross-Account Access for Users
+https://confluence.disney.com/display/wdprcloud/AWS+Cross-Account+Access+for+Users
+
+---
+Oct.10/2021
+Some Docker Troubleshooting ?????
+wsl --update
+wsl --shutdown
+
+Uninstall Docker Desktop
+Restart computer
+Install Docker Desktop with Admin privileges
+Open Docker Desktop
+
+Oct.12/2021
+Nexus Rights
+https://nexustools.disney.com/#/
+
+CICD request form to add Sonar group
+RITM4298857
+https://disney.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D1e53db94dbde7240d077f1431d961911
+
+Slack Steps SonarQube
+https://disney.slack.com/archives/G7Q1VBTDK/p1617119149095900
+
+MVN Verify Steps
+https://disney.slack.com/archives/G7Q1VBTDK/p1594920972292400?thread_ts=1594822464.203800&cid=G7Q1VBTDK
+
+Oct.13/2021
+CAPABILITIES Checking
+
+TOKEN
+curl --location --request POST 'https://perf-cloud.authorization.go.com/token?client_id=WDPRT-DISNEYWORLD.GC-VALID&scope=RETURN_ALL_CLIENT_SCOPES&grant_type=password&username=load-2021-test-resmod-0009@example.com&password=disney123' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-raw ''
+
+CAPABILITIES
+curl --location --request GET 'https://load.healthmonser.wdprapps.disney.com/health-monitor-service/destinations/22222222/capabilities' \
+--header 'Authorization: Bearer 638aeac42a244106a518a782f0b0f503' \
+--header 'Content-Type: application/json'
+
+STATUS
+curl --location --request GET 'https://load.dcl-caap-sailingavail.wdprapps.disney.com/dcl-apps-sailingavail-svc/dcl-sysmonitor-service/system/status' \
+--header 'X-DCLAPI-HealthCheck: ALL'
+
+HOW To get Port of Call Names
+If I get 
+"portCode": "554;entityType=port-of-call;destination=dcl"-->OneSourceId
+
+LIST of ALL PORTS
+https://dcl-caap.wdprapps.disney.com/dcl-apps-marketingoffers-svc/finder/list/ancestor/dcl;entityType=destination?filters=port-of-call&region=intl
+
+With this one we get the info for the PORT CAll especifically. Look 554;entityType=port-of-call;destination=dcl in the URL
+https://dcl-caap.wdprapps.disney.com/dcl-apps-marketingoffers-svc/finder/detail/WDPRO_API_ID/554;entityType=port-of-call;destination=dcl?region=INTL&attributes=itinerary(all)
+
+This is the same but it uses the SeawareId (??)
+https://dcl-caap.wdprapps.disney.com/dcl-apps-marketingoffers-svc/finder/detail/WDPRO_API_ID/GOC;entityType=port-of-call;destination=dcl?region=INTL&attributes=itinerary(all)
+
+
+Oct.15/2021
+Useful GIT Commands 
+git reset --hard HEAD
+or 
+git reset --hard HEAD^ removes last commit.
+
+git revert -n SHALIST
+git log --oneline
+
+DELETE Branch 
+$ git push -d <remote_name> <branch_name> -> Remote
+$ git branch -d <branch_name> --> locally
+$ git branch -D <branch_name> --> locally forcing.
+
+
+$ curl -Iv http://localhost
+
+
+Oct.20/2021
+AWS
+http://aws.wdprapps.disney.com/
+-> Disney ID Use email.
+
+
+Oct.23/2021
+CD -> Cruise Details (edited) 
+11:11
+SAS -> select a Stateroom
+11:11
+CL -> cruise listing
+11:12
+El orden es CL -> CD -> SAS -> cart -> guest info -> checkout -> confirmation
+11:13
+y se le puede agregar SO -> special offers, SOD -> special Offers Details adelante si elegis una offer
+
+
+
+2021-04-23T17:00:04.293-05:00
+2021-04-23T17:07:16.462-05:00
+
+
+Oct.25/2021
+LOGTIP
+To include the version in WDPR RA logging
+
+1. Open pom.xml file
+Locate the <build> node and add the following as a child of it
+<resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+2. Locate the <plugins> node and inside of it put the following
+     <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <delimiters>
+            <delimiter>@</delimiter>
+          </delimiters>
+          <useDefaultDelimiters>false</useDefaultDelimiters>
+        </configuration>
+      </plugin>
+
+If you see an error when building it may happen you have binary files and other
+file extensions, so we need to exclude those for this reseouce mapping
+
+Change this to look like this
+     <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <delimiters>
+            <delimiter>@</delimiter>
+          </delimiters>
+          <useDefaultDelimiters>false</useDefaultDelimiters>
+          <nonFilteredFileExtensions>
+            <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+            <nonFilteredFileExtension>xml</nonFilteredFileExtension>
+            <nonFilteredFileExtension>csv</nonFilteredFileExtension>
+            <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+            <nonFilteredFileExtension>json</nonFilteredFileExtension>
+          </nonFilteredFileExtensions>
+        </configuration>
+      </plugin>
+
+3. Open WdprLogAppender.properties and update Version
+Version=@project.version@
+
+NOTE: If you are creating the project using Spring Boot 2.x, this is already
+configured out of the box, except you have in the resources folder some binary
+files.
+
+CONFIGURE GIT MERGE TOOL?????
+
+Nov.2/2021
+SNOW Dashboard
+SNOW Cruise Sales Important dashboardMode
+https://disney.service-now.com/$pa_dashboard.do?sysparm_dashboard=56b89715db4770509aad6d8d13961940&sysparm_tab=0cc81b55db4770509aad6d8d13961930&sysparm_cancelable=true&sysparm_editable=false&sysparm_active_panel=false
+
+
+Nov.3/2021
+A good blog about a common situation for Apache HTTP
+
+A case of Apache HTTP client becoming unusable due to java.lang.OutOfMemoryError
+https://blog.adebski.com/posts/apache-http-client-shutting-down/
+
+
+Nov.5/2021
+--
+TOMCATTIP
+Installing Smart Tomcat (as of now)
+Open IntelliJ (use V2021.2.3 or later)
+
+Open IntelliJ Settings dialog box
+Next locate plugin
+Next select Smart Tomcat
+Click Apply (no need to restart IntelliJ).
+Click Add Configuration to add a new server configuration, if there are other 
+configurations then ......
+
+First you need to add a Tomcat Server (External). Click Configuration
+Add the tomcat path and then select this one from the dropdown list.
+
+
+Set Tomcat More Memory
+https://crunchify.com/how-to-change-jvm-heap-setting-xms-xmx-of-tomcat/
+
+Create SETENV.BAT (Windows)
+
+
+http://localhost:8080/dcl-apps-sailingcheckout-vas/healthcheck
+http://localhost:8080/dcl-apps-sailingcheckout-vas/healthcheck/all
+http://localhost:8080/dcl-apps-sailingcheckout-vas/health/deep
+http://localhost:8080/dcl-apps-sailingcheckout-vas/health/shallow
+
+
+------
+Nov.11/2021
+Splunk - My Logs are Missing - Troubleshooting Steps
+https://confluence.disney.com/pages/viewpage.action?spaceKey=EngineeringExcellence&title=Splunk+-+My+Logs+are+Missing+-+Troubleshooting+Steps
+
+
+Nov.18/2021
+GITHUBTIP
+When you are looking into a file checking and the file uses TABS instead of
+SPACES use the ?ts=4 to tell github that format code using this setting and
+it will show properly indented as the developer intention.
+
+Nov.18/2021
+AppD for PRD AWS all
+https://disney-prod.saas.appdynamics.com/controller/#/location=APP_DASHBOARD&timeRange=last_30_minutes.BEFORE_NOW.-1.-1.30&application=528&dashboardMode=force
+
+
+SPLUNKTIP
+DCL_PROD Splunk Dashboard
+https://splunk.wdprapps.disney.com/en-US/app/launcher/dcl_prod?form.timeRange.earliest=-15m&form.timeRange.latest=now&form.conversationid=*&form.requestid=*&form.phpid=*&form.tokenPool=prod*&form.operation=*&form.referer=*
+
+Dec.01/2021
+JAVATIP VISUALVMTIP
+Getting Started with VisualVM
+https://visualvm.github.io/gettingstarted.html?VisualVM_2.1.1
+
+Dec.02/
+APPDTIP
+DCL Command Center (Dashboard)
+https://disney-prod.saas.appdynamics.com/controller/#/location=CDASHBOARD_DETAIL&timeRange=last_1_hour.BEFORE_NOW.-1.-1.60&mode=MODE_DASHBOARD&dashboard=2092
+
+APPDTIP
+Wiki to ask for AppD permissions
+
+AppDynamics permissions
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=AppDynamics+permissions
+
+WIKITIP
+PA VAS - Product Availability - Retrieve Products
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLCOMCLRE&title=PA+VAS+-+Product+Availability+-+Retrieve+Products
+other useful tips are in this workspace.
+
+WIKITIP
+Disney Sustainment Acronym Glossary
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+Sales+Sustainment+Acronym+Glossary
+
+VISUALVMTIP
+https://github.com/oracle/visualvm/issues/112
+
+--> Put in visualvm/etc/visualvm.conf file the --jdkhome setting for the
+JDK to use to explore the jvm
+
+GITHUBTIP
+NIMBUSTIP
+https://github.disney.com/se-wdpr-infrastructure/nimbus_deploy
+
+Dec.10/2021
+JVMTIP
+Memory Heap monitoring 
+
+How to gather heap and thread dump for the Adminserver java process
+https://knowledgebase.progress.com/articles/Article/How-to-gather-heap-and-thread-dump-for-the-Adminserver-java-process
+
+How to Check Memory Usage in Linux, 5 Simple Commands
+https://phoenixnap.com/kb/linux-commands-check-memory-usage
+
+docker stats
+https://docs.docker.com/engine/reference/commandline/stats/
+
+Different Ways to Capture Java Heap Dumps
+https://www.baeldung.com/java-heap-dump-capture
+
+Capturing a Java Thread Dump
+https://www.baeldung.com/java-thread-dump
+
+Taking Heap and Thread Dumps
+https://confluence.disney.com/pages/viewpage.action?spaceKey=wdprcloud&title=Taking+heap+and+thread+dumps
+
+Dec.16/2021
+Log4ShellVulnerability
+
+DOCKERTIP
+https://github.disney.com/WDPR-RA/wdpr-ra-docker-base-tomcat
+
+APPDTIP
+https://docs.appdynamics.com/display/PAA/Security+Advisory%3A+Apache+Log4j+Vulnerability
+
+
+https://confluence.disney.com/display/EngineeringExcellence/AppDynamics+-+Log4j+Vulernability+CVE-2021-44228
+
+https://confluence.disney.com/pages/viewpage.action?spaceKey=EngineeringExcellence&title=AppDynamics+-+Log4j+Vulernability+CVE-2021-44228
+
+https://docs.google.com/spreadsheets/d/1kFd5UIvqvkkGGYWo9ujIACX06Gsw3Rht9FwWpH-CTY4/edit#gid=0
+
+https://docs.google.com/spreadsheets/d/1kFd5UIvqvkkGGYWo9ujIACX06Gsw3Rht9FwWpH-CTY4/edit#gid=0
+
+https://confluence.disney.com/pages/viewpage.action?spaceKey=DPEPRA&title=Java+-+Log4j+v2+Vulnerability
+
+Dec.17/2021
+SNOWINCS
+INC19528183 -> BAPP0130925 - DCL Travel Party SVC - LATEST - Jenkins Builds are unsuccessful by test_success_density
+
+
+WIKITIP
+Secure SPAs' endpoints
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=Secure+SPAs%27+endpoints
+
+
+Dec.20/2021
+APPDTIP
+AppDynamics (AppD) Monitoring
+https://confluence.disney.com/pages/viewpage.action?spaceKey=EngineeringExcellence&title=AppDynamics+%28AppD%29+Monitoring
+
+
+SPLUNKTIP
+DCL Legacy Index
+index="wdpr_dcl_legacy_non_pci"  source="*dclcontent-latest*" c93e3ef0-5c33-11ec-aa49-15ecf647f935
+
+KrakenTIPS
+Disney Onboarding New Members
+https://docs.google.com/document/d/1qd-EE_rYa-a3kUx9TXfJG-tw8ac-ZEzTgt4_NHJ6NAA/edit#
+
+
+WIKITIP
+DSE Incidents - Priority and Flow Chart
+https://confluence.disney.com/display/DisneySignatureExperience/DSE+Incidents+-+Priority+and+Flow+Chart
+
+
+KrakenTIPS
+DCL Commerce Business Rules
+https://mywiki.disney.com/display/DCL/DCL+Commerce+Business+Rules
+
+
+KrakenTIPS
+Capability issue
+https://docs.google.com/document/d/1euW-J9xNmQ5NXQ5LGiWgwGusURV2dEMJZVWXCVbm_Dg/edit
+
+Dec.24/2021
+SNOWTIP
+SNOW catalog to AWS resources -> Creates REQ/RITM
+https://disney.service-now.com/com.glideapp.servicecatalog_cat_item_view.do?v=1&sysparm_id=9e117eb5dbcce70099bc9e26db961929&sysparm_link_parent=07706001db0a0300c536f3f7bf96199d&sysparm_catalog=e0d08b13c3330100c8b837659bba8fb4&sysparm_catalog_view=catalog_default
+
+WIKITIP
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+Project+List
+
+AppD
+AppDynamics - Downloads - Java Agents
+https://confluence.disney.com/pages/viewpage.action?spaceKey=EngineeringExcellence&title=AppDynamics+-+Downloads+-+Java+Agents
+
+Dec.28/2021
+AppD
+Java and Tomcat App Setup
+https://confluence.disney.com/display/EngineeringExcellence/AppDynamics+-+Java+and+Tomcat+App+Setup
+
+TOMCATTIP
+Tomcat Logging
+https://docs.progress.com/es-ES/bundle/pas-for-openedge-administration-117/page/Tomcat-logging.html
+
+- catalina.log, a log with entries that describe server activity
+- catalina.out, a log for system output and standard error messages
+- localhost.log, a log file for tracking Web application activity
+- localhost_access.log, a log for tracking requests processed by the server
+- host_manager.log, a log for Tomcat's host-manager.war Web application
+- manager.log, a log for Tomcat's manager.war Web application
+
+Jan.04/2021
+Query by Weston
+https://myjira.disney.com/issues/?jql=filter%20%3D%2058829%20AND%20(labels%20%3D%20EMPTY%20OR%20labels%20not%20in%20(close-on-launch))%20AND%20priority%20in%20(Blocker%2C%20Critical%2C%20Major)%20AND%20project%20!%3D%20%22DCL.COM%20Res%20Modernization%22%20AND%20labels%20%3D%20WestonClowney%20ORDER%20BY%20key%20ASC
+
+Jan.05/2021
+JAVATIP
+(This is the JVM config in Smart Tomcat config )
+-Dcatalina.base="C:\java\apache-tomcat-9.0.54"
+-Dcatalina.home="C:\java\apache-tomcat-9.0.54"
+-Xms256M
+-Xmx512M
+-XX:MaxMetaspaceSize=2048M
+-DdeployEnv=LOCAL
+-Dlog.root="c:\dev\logs\dcl-apps-sailingcheckout-vas-0"
+
+
+PRB0061862
+
+Dec.09/2021
+JAVATIP, JVMTIP
+Off-Heap memory reconnaissance
+https://blog.arkey.fr/2020/11/30/off-heap-reconnaissance/
+
+Detecting and fixing memory leak in java
+https://www.javamadesoeasy.com/2016/12/detecting-and-fixing-memory-leak-in-java.html
+
+Understanding Memory Leaks in Java
+https://www.baeldung.com/java-memory-leaks
+
+Top 20+ Memory Leak Detection Tools For Java, C++ On Linux And Windows
+https://www.softwaretestinghelp.com/memory-leak-detection-tools/
+
+YourKit
+https://www.yourkit.com ---> PAID
+
+UNIXTIP
+Unix command to find a file in a directory and subdirectory
+https://www.cyberciti.biz/faq/unix-command-to-find-a-file-in-a-directory-and-subdirectory/
+
+DisneyGITUBREPOS
+
+https://github.disney.com/wdpr-enterprisemonitoring/wdpr-em-appd-java-agent
+https://github.disney.com/WDPR-RA/wdpr-ra-docker-base-java#appdynamics
+https://github.disney.com/WDPR-RA/wdpr-ra-docker-base-tomcat#what-is-included-in-the-image
+https://github.disney.com/WDPR-RA/wdpr-ra-docker-base-tomcat
+
+APPDTIP
+AppDynamics - Java and Tomcat App Setup
+https://confluence.disney.com/pages/viewpage.action?spaceKey=EngineeringExcellence&title=AppDynamics+-+Java+and+Tomcat+App+Setup
+
+AppDynamics - Downloads - Java Agents
+https://confluence.disney.com/pages/viewpage.action?spaceKey=EngineeringExcellence&title=AppDynamics+-+Downloads+-+Java+Agents
+
+
+Jan.11/2021
+MAVENTIP
+APPTIP SAILINGAVAILSVC
+PUt the -Duser.timezone=UTC here or as part of the JAVA process startup to set 
+user time in UTC for unit tests to work.
+<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>${surefireArgLine} -Xmx2048m -noverify -Duser.timezone=UTC</argLine>
+					<includes>
+						<include>**/*Test.java</include>
+						<include>**/*FT.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+
+Jan.12/2022
+SNOWTIP
+Create requests for CICD
+https://disney.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D1e53db94dbde7240d077f1431d961911%26sysparm_link_parent%3Da46ca0632bf93100071b36a3e4da15dd%26sysparm_catalog%3De0d08b13c3330100c8b837659bba8fb4%26sysparm_catalog_view%3Dcatalog_default%26sysparm_view%3Dtext_search
+
+Jan.21/2022
+SPLUNKTIP
+License Usage by Indexes
+https://splunk.wdprapps.disney.com/en-US/app/wdpr_LicensingApp/license_usage_by_indexes
+
+Jan.25/2022
+REDISTIP
+$ docker run --name redis_local -d -p 6379:6379 redis
+
+WIKITIP
+Docker Desktop Alternatives - 2021 Q4 Docker Hub Replacement
+https://confluence.disney.com/pages/viewpage.action?spaceKey=DTSSProfSvcs&title=Docker+Desktop+Alternatives+-+2021+Q4+Docker+Hub+Replacement
+
+
+Mar.17/2022
+SNOWTIP
+DCL Web Dashboard
+https://disney.service-now.com/nav_to.do?uri=%2F$pa_dashboard.do%3Fsysparm_dashboard%3D56b89715db4770509aad6d8d13961940%26sysparm_tab%3D0cc81b55db4770509aad6d8d13961930%26sysparm_cancelable%3Dtrue%26sysparm_editable%3Dundefined%26sysparm_active_panel%3Dfalse
+
+GDOCS
+Splunk Alert Management Guide
+https://docs.google.com/document/d/1h78zXN0JCicy-4D__fSN7N-9_o2n64NGwpss_Bayuz4/edit#heading=h.l82d6j6jfpmy
+
+Problem Record Steps to Completion
+WIKITIP
+https://confluence.disney.com/pages/viewpage.action?spaceKey=DisneySignatureExperience&title=Problem+Record+Steps+to+Completion
+
+NOTE: The AG and RCA Approver is
+AG: ops-global-dse-operations
+RCA / Solution Approver: Nick Schaut
+
+WIKITIP
+DCL Web Architecture
+https://mywiki.disney.com/display/DCL/DCL+WEB+ARCHITECTURE
+
+Booking Flow Architecture
+https://mywiki.disney.com/display/DCL/Booking+Flow+Architecture
+
+Cast Migration - Technical Feature and Solution Overview
+https://mywiki.disney.com/display/DCLTTM/Cast+Migration+-+Technical+Feature+and+Solution+Overview
+
+Cast Migration - Triaging
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLTTM&title=Cast+Migration+-+Triaging
+
+SPLUNKTIP/BizLogic
+To check Bizlogic Problems.
+index=dcl_seaware source=*internet* "INTERNAL PROCEDURES"
+
+index="*dcl*" "*Accessviolationataddress0000000000F3417Dinmodule'SwBizLogic.exe'.ReadofaddressFFFFFFFFFFFFFFFF*"
+
+Mar.25/2022
+DCLHistory
+
+Disney Magic go to sail in 1998
+Disney Wonder 
+Disney Wish 2022
+
+
+Mar.29/2022
+DocumentationTIPS
+Data Flow Diagram Requirements
+https://dpepcybersecurity.disid.disney.com/data-flow-diagram-requirements/
+
+
+Mar.31/2022
+MONITORTIP
+
+The following two URLs to check Bizlogic and Capabilities 
+
+curl --location --request GET https://stage.disneycruise.disney.go.com/dcl-apps-sales-webapi/health-monitor-service/capabilities/ \
+     --header 'Authorization: BEARER '
+
+curl --location --request GET 'https://healthmonser.wdprapps.disney.com/health-monitor-service/destinations/22222222/capabilities' \
+     --header 'Authorization: BEARER 7e3e90bb299444a1826967758e296dda'
+
+DCL Java apps spring version check (POM)
+https://docs.google.com/spreadsheets/d/1fuqlcRhqo02tmvzLlKf_zDGHb1LbvQHpQB0jprkVtEA/edit#gid=0
+
+
+Apr.04/2022
+UNPINNED
+curl -X GET   http://stage.listservice.wdprapps.disney.com/lists-service/configurations/MODEL_DCL_VPP_SELECTION_STRINGS   -H 'Accept-Language: en-us'   -H 'Authorization: BEARER xxxe'   -H 'Postman-Token: 3be6374f-925d-47f8-9652-aea677fa4d56'   -H 'cache-control: no-cache'
+
+Defect labels
+https://docs.google.com/spreadsheets/d/1gLYu1l9qAaFRI57c3EMA7DrAfJP0OkNbh8CrvSc2HoA/edit#gid=0
+
+
+Apr.11/2022
+ENDPOINT
+GET A reservation details.
+curl --location --request GET 'https://load.dclsvc-reservation.wdprapps.disney.com/reservation_api/Reservations/30341772?Depth=All' \
+--header 'Authorization: BEARER 088172ce5e1e4383bb404af14e64a88c'
+
+Apr.18/2022
+ENDPOINT
+GnA main page
+https://disneycruise.disney.go.com/gifts-and-amenities/
+
+ENDPOINT to check data from SVC by port.
+https://dcl-caap-amenity.wdprapps.disney.com/dcl-amenities-svc/api/v1/amenities?port=PCV
+
+
+ENDPOINT
+MyRes flow.
+Request URL: https://stage.disneycruise.disney.go.com/my-disney-cruise/my-reservations/api/v1/cruise-reservations/%7B721843F0-03B0-4C6F-B473-E7DE05163E8C%7D/
+Request Method: GET
+https://stage.gam-dcl.wdprapps.disney.com/keyring/dcl-reservation/id;dcl-reservation-id=40014782
+
+
+Apr.20/2022
+RA-LINKS
+Starter Projects (RA way)
+https://confluence.disney.com/pages/viewpage.action?spaceKey=DPEPRA&title=Starter+Projects
+
+RA Portal
+https://raportal.disney.com/
+
+WDPR Logging Filter
+https://github.disney.com/WDPR-RA/wdpr-loggingapi/blob/develop/Documents/WDPR-Logging-Filter.md
+
+May.4/2022
+WIKITIP
+Clear Cache DCL PAVAS
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=Clear+cache+-+DCL+Product+Avail+VAS
+
+May.05/2022
+RA-LINKS
+Architectural Patterns
+https://confluence.disney.com/pages/viewpage.action?spaceKey=DPEPRA&title=Architectural+Patterns
+
+May.11/2022
+NEXUS
+To grant Disney Nexus access to repos.
+https://nexustools.disney.com/#/
+
+Jun.16/2022
+When the 
+Request URL: https://lt01.disneycruise.disney.go.com/profile-api/authentication/get-client-token/
+Request Method: GET
+Status Code: 504 
+
+It may be the service is not scaled up so it nonFilteredFileExtension to be so.
+https://github.disney.com/pages/se-wdpr-infrastructure/pace-prescale/
+
+Profile applications are listed here.
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=gamprofile&title=Profile+Applications
+
+Jun.18/2022
+Migrating from JUnit4 to JUnit5
+https://www.baeldung.com/junit-5-migration
+
+Jul.01/2022
+Git for Windows (dedicated site)
+https://gitforwindows.org/
+
+Jul.03/2022
+SONARLINT
+https://community.sonarsource.com/t/sonalint-invalid-binding-issue-because-of-component-list-pb/64828
+
+
+Jul.25/2022
+BIZLOGICTIP
+Use the ResShellOptions>IncludeElements to ask BizLogic for those info.
+If you omit it, it will return all of the items defined in the LoadBooking_OUT
+<LoadBooking_IN>
+	<MsgHeader>
+		<Version>1.0</Version>
+		<SessionGUID>{{sessionguid}}</SessionGUID>
+		<Language>ENG</Language>
+	</MsgHeader>
+	<Options>
+		<Lock>N</Lock>
+	</Options>
+	<ResShellOptions>
+        <IncludeElements>ResHeader ResPackages ResGuests ResPromotions ResShipRequests ResInvoice ResComponents ResAddons ResDining ResPaymentSchedule AccTransactions</IncludeElements>
+    </ResShellOptions>
+	<ResID>{{reservationId}}</ResID>
+</LoadBooking_IN>
+
+
+Jul.26/2022
+
+PROFILETIP
+
+Gold
+prod.gold.2@testing.com
+Disney123
+Mr. Junior Test
+ID Member 35
+This is marked as PLATINUM
+
+curl 'https://profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BFA5810DF-AB81-4EA8-8524-5D6B5238F162%7D/affiliations?site=DCL' \
+  -H 'authority: profile-svc.wdprapps.disney.com' \
+  -H 'accept: */*' \
+  -H 'authorization: BEARER MASKED' \
+  -H 'content-type: application/json' \
+  -H 'origin: https://disneycruise.disney.go.com' \
+  -H 'referer: https://disneycruise.disney.go.com/' \
+  -H 'sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36' \
+  -H 'x-correlation-id: corr20220725b' \
+  -H 'x-disney-internal-wam_debug: true' \
+  --compressed
+
+Response
+{
+    "links": {
+        "profile": {
+            "href": "https://profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BFA5810DF-AB81-4EA8-8524-5D6B5238F162%7D/profile"
+        },
+        "self": {
+            "href": "https://profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BFA5810DF-AB81-4EA8-8524-5D6B5238F162%7D/affiliations?site=DCL"
+        }
+    },
+    "errors": [],
+    "offset": 0,
+    "limit": 2,
+    "total": 2,
+    "entries": [
+        {
+            "affiliationType": "CASTAWAYCLUB",
+            "clubId": "35",
+            "level": "PLATINUM"
+        },
+        {
+            "affiliationType": "FL_RESIDENT",
+            "validationDate": "2022-07-26"
+        }
+    ],
+    "self": {
+        "href": "https://profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BFA5810DF-AB81-4EA8-8524-5D6B5238F162%7D/affiliations?site=DCL"
+    }
+}
+
+Prod.gold.1@testing.com
+Disney123
+Child Test
+ID Member 36
+This is marked as GOLD (ONLY)
+curl 'https://disneycruise.disney.go.com/dcl-apps-productavail-vas/guests/%7BA4DBB876-8E90-480D-B5C8-90ECA4168487%7D/affiliations/' \
+  -H 'authority: disneycruise.disney.go.com' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en' \
+  -H 'adrum: isAjax:true' \
+  -H 'content-type: application/json' \
+  -H 'cookie: Conversation_UUID=fc1eef40-0cf5-11ed-9f07-57e6d8caeac5; siteId=dcl; dvicSpaApplication=%7B%22dvicSpaApplication%22%3Atrue%7D; localeCookie_jar=%7B%22preferredRegion%22%3A%22en%22%2C%22contentLocale%22%3A%22en%22%2C%22localeCurrency%22%3A%22USD%22%2C%22version%22%3A%222%22%2C%22precedence%22%3A0%7D; AFFILIATIONS_jar=%7B%22dcl%22%3A%7B%22storedAffiliations%22%3A%5B%22FL_RESIDENT%22%2C%22US_RESIDENT%22%5D%7D%7D; GEOLOCATION_jar=%7B%22zipCode%22%3A%2232828%22%2C%22region%22%3A%22florida%22%2C%22country%22%3A%22united+states%22%2C%22metro%22%3A%22orlando-daytona+bch-melbrn%22%2C%22metroCode%22%3A%22534%22%2C%22countryisocode%22%3A%22USA%22%7D; __pa=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NTg4NDg2MjAsImFjY2Vzc190b2tlbiI6ImQzNGI3NzhhZmUwYTQxZDRiOTI2MDFiOTgyYjRhYjcwIiwidG9rZW5fdHlwZSI6IkJFQVJFUiIsImV4cGlyZXNfaW4iOiIyODgwMCJ9.qlM26EN5zK0RCPTCTtQEFGSr-v2YdsTWPiQ7uj_ohSA2Qb0HLTx1L5gx2Gfp970MobS6MVVowFAx9PNY6XTk0w; paPublicTokenExpireTime=1658877323289; check=true; AMCV_EDA101AC512D2B230A490D4C%40AdobeOrg=0%7CMCMID%7C36030388337699903060340534169244970583; s_ecid=MCMID%7C36030388337699903060340534169244970583; AMCVS_EDA101AC512D2B230A490D4C%40AdobeOrg=1; preferredStoryOrdering=A; _gcl_au=1.1.1373697628.1658848589; _fbp=fb.1.1658848588850.1894257089; _ga=GA1.2.1849878751.1658848589; _gid=GA1.2.1201854133.1658848589; _scid=5da9d764-0fed-4586-ab61-1af8184802f9; s_fid=5117CC18F5AF1791-11ADF385BDAC7A39; s_vi=[CS]v1|317002BD1E3B6A06-60001A2562569A9F[CE]; device_24be699=c6057b26-e32c-43b7-a81b-467fc1451443; privacy_pref=country:US|age:21; bkSent=true; _cs_c=0; LPVID=gzYmM2NGIzZDA4OWE1MTRi; utag_main=v_id:01823b14d2990007d7c53626619d0506f01fd067007e8$_sn:2$_ss:1$_st:1658852973121$vapi_domain:go.com$ses_id:1658851173121%3Bexp-session$_pn:1%3Bexp-session; TPR-DCL-LBJS.WEB-PROD.api=2U61FnpwQWBWIKZIot3yqMAagWNYtMR8QSURyrX9CuRuoGi8j1PNac/68GjAyByafaCNb24VD4EHx3/QJGAmpPIrWbeW; TPR-DCL-LBJS.WEB-PROD.ts=2022-07-26T16:29:54.379Z; TPR-DCL-LBJS.WEB-PROD.token=5=eyJhY2Nlc3NfdG9rZW4iOiJiMThlYjUyODBlMDU0ZGQyYTcxNWEzZjcwMTJjZGJlOCIsInJlZnJlc2hfdG9rZW4iOiIyNjYzNjk1NzY2ZjE0OTdkODMzNWZjNzQxMTQ1ODllMSIsInN3aWQiOiJ7QTREQkI4NzYtOEU5MC00ODBELUI1QzgtOTBFQ0E0MTY4NDg3fSIsInR0bCI6MTgwMCwicmVmcmVzaF90dGwiOjE1NTUyMDAwLCJoaWdoX3RydXN0X2V4cGlyZXNfaW4iOjE3OTksImluaXRpYWxfZ3JhbnRfaW5fY2hhaW5fdGltZSI6MTY1ODg1MTIzMTg5OCwiaWF0IjoxNjU4ODUxMjMxMDAwLCJleHAiOjE2NTg4NTMwMzEwMDAsInJlZnJlc2hfZXhwIjoxNjc0NDAzMjMxMDAwLCJoaWdoX3RydXN0X2V4cCI6MTY1ODg1MzAzMDAwMCwic3NvIjpudWxsLCJhdXRoZW50aWNhdG9yIjoiZGlzbmV5aWQiLCJsb2dpblZhbHVlIjpudWxsLCJjbGlja2JhY2tUeXBlIjpudWxsLCJzZXNzaW9uVHJhbnNmZXJLZXkiOiJEMlREc0Y3dkhZaUdydWJHelU1MEw3eGU4ZlNzazRmU2dpYll1Q0IycFBrdThQVU1yZFVWNG1qYnpCSjdBdm9wdUNFaWxQc0M0am1TbityNWQ0RnkrZHA3MjBrYUV2eTExT1NIdlgxVDZROWQ3YWhvbk1VPSIsImNyZWF0ZWQiOiIyMDIyLTA3LTI2VDE1OjU5OjU0LjM3N1oiLCJsYXN0Q2hlY2tlZCI6IjIwMjItMDctMjZUMTU6NTk6NTQuMzc3WiIsImV4cGlyZXMiOiIyMDIyLTA3LTI2VDE2OjI5OjU0LjM3N1oiLCJyZWZyZXNoX2V4cGlyZXMiOiIyMDIzLTAxLTIyVDE1OjU5OjU0LjM3N1oiLCJibHVlX2Nvb2tpZSI6bnVsbH0=|; TPR-DCL-LBJS.WEB-PROD-ac=XUS; TPR-DCL-LBJS.WEB-PROD.idn=00e8cf5ae4; SWID={A4DBB876-8E90-480D-B5C8-90ECA4168487}; SWID_NT=0; pep_oauth_refresh_token=0gyOfaRTBshI%2Fpm2HM8AYEhBp7rY6xceomA7FDrcytY%3D; pep_oauth_refresh_token_pp=0gyOfaRTBshI%2Fpm2HM8AYEhBp7rY6xceomA7FDrcytY%3D; pep_jwt_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjBFVG55SGRsNTZuVnJqZXQiLCJqa3UiOiJodHRwczovL3Byb2ZpbGUtand0LndkcHJhcHBzLmRpc25leS5jb20vand0LXNlcnZpY2UvYXBpL3YxL3B1YmxpYy1rZXkifQ.eyJleHAiOjE2NTg4NTMwMzIsImlhdCI6MTY1ODg1MTIzMywiaXNzIjoiaHR0cHM6Ly9wcm9maWxlLWp3dC53ZHByYXBwcy5kaXNuZXkuY29tL2p3dC1zZXJ2aWNlL2FwaS92MS90b2tlbiIsImRpc25leSI6eyJ0b2tlbiI6eyJzd2lkIjoie0E0REJCODc2LThFOTAtNDgwRC1CNUM4LTkwRUNBNDE2ODQ4N30iLCJ0dGwiOjE3OTksInNjb3BlIjpbIkFVVEhaX0dVRVNUX1NFQ1VSRURfU0VTU0lPTiJdLCJhdXRoZW50aWNhdG9yIjoiZGlzbmV5aWQiLCJhY2Nlc3NfdG9rZW4iOiJiMThlYjUyODBlMDU0ZGQyYTcxNWEzZjcwMTJjZGJlOCJ9fX0.LWyqzCFwzx25c6AMME8iog9y4tbRsLUWDIYDtZiOyxKaFsLWt8KUaSDt0wh4GrCwKsUPnD15XKC-DUK7eq9lMC6M73YTKsyuH2qWQGzjWc_wuFEB-RlRD8J0U0T86KjB3SF-UMCudztOzhyozcvmCKkQ2rfrlb1XwuaNeU2ExjTMueKBRlpuA4cUPQBZm7X_09MNeXXqEtd_QHkbYcpnU5gG3JOQhqnpomXvyh126qSK2_gZ68Gb6T26Ul-NhYPUX7PZ5eJ278cKCaHqBxc7kR9FT2wi-zQpds9nb7-orYyvJYG6XuJgWbnQoF8FazNXTCeBuo-GAhJ1KgE97q4SCA; pep_oauth_token=b18eb5280e054dd2a715a3f7012cdbe8; authenticationSecure=true; rememberme=%7B%22name%22%3A%22Child%22%2C%22lastName%22%3Anull%2C%22avatar%22%3A%22%22%2C%22swid%22%3A%22%7BA4DBB876-8E90-480D-B5C8-90ECA4168487%7D%22%7D; SESSION_TIMEOUT=2022-07-26T16:29:54.377Z; SWID={A4DBB876-8E90-480D-B5C8-90ECA4168487}; PHPSESSID=6lm2pfbicdjaf3jvo41h5qk2u7; LANGUAGE_MESSAGE_DISPLAY=1; WDPROView=%7B%22version%22%3A2%2C%22preferred%22%3A%7B%22device%22%3A%22desktop%22%2C%22screenWidth%22%3A1280%2C%22screenHeight%22%3A1024%7D%2C%22deviceInfo%22%3A%7B%22device%22%3A%22desktop%22%2C%22screenWidth%22%3A1280%2C%22screenHeight%22%3A1024%7D%2C%22browserInfo%22%3A%7B%22agent%22%3A%22Chrome%22%2C%22version%22%3A%22103.0.0.0%22%7D%7D; mboxEdgeCluster=35; _gat_gtag_UA_99867646_1=1; ajs_user_id=null; ajs_group_id=null; ajs_anonymous_id=%22f9de6997-0ec2-4764-8785-8483fde63d55%22; LPSID-16557381=320J_ANHTlSJEgaph-7PdQ; _cs_cvars=%7B%221%22%3A%5B%22s%20cVAR%22%2C%22wdpro%2Fdcl%2Fintl%2Fen%2Ftools%2Fmdc%2Fprofile%2Flanding%22%5D%7D; _cs_id=4111ca63-6ef7-a3cc-e5b5-065c48a627cf.1658848666.2.1658851209.1658851082.1588953526.1693012666413; _cs_s=2.1.0.1658853009995; __CT_Data=gpv=2&ckp=tld&dm=go.com&apv_6_www49=4&cpv_6_www49=2; mbox=PC#2ac41b9e279949549e8db66bb2d4c93f.35_0#1722096022|session#c091667028b843a09e0df00dd6fa99c3#1658853028; _uetsid=eccd46b00cf511edbbcadded3222c436; _uetvid=ecd3ee200cf511edab156333b9486335; facetFilters=october-2023; s_pers=%20s_gpv_pn%3Dwdpro%252Fdcl%252Fus%252Fen%252Fcontent%252Fhome%7C1658853027516%3B; s_sess=%20s_cc%3Dtrue%3B%20s_sq%3Dwdgwdprodcldev%25252Cwdgwdprosecdev%253D%252526pid%25253Dwdpro%2525252Fdcl%2525252Fintl%2525252Fen%2525252Ftools%2525252Fmdc%2525252Fprofile%2525252Flanding%252526pidt%25253D1%252526oid%25253Dhttps%2525253A%2525252F%2525252Fdisneycruise.disney.go.com%2525252F%252526ot%25253DA%3B%20s_tp%3D5526%3B%20s_slt%3D%3B%20s_ppv%3Dwdpro%252Fdcl%252Fus%252Fen%252Fcontent%252Fhome%252C18%252C18%252C969%3B; jsongeoip=eyJhcmVhY29kZSI6IjQwNyIsImNvdW50cnkiOiJ1bml0ZWQgc3RhdGVzIiwiY29udGluZW50IjoibmEiLCJjb25uZWN0aW9uIjoiYnJvYWRiYW5kIiwiY291bnRyeWNvZGUiOiI4NDAiLCJjb3VudHJ5aXNvY29kZSI6InVzYSIsImRvbWFpbiI6ImRpc25leS5jb20iLCJkc3QiOiJ5IiwiaXNwIjoiZGlzbmV5IHdvcmxkd2lkZSBzZXJ2aWNlcyBpbmMuIiwibWV0cm8iOiJvcmxhbmRvLWRheXRvbmEgYmNoLW1lbGJybiIsIm1ldHJvY29kZSI6IjUzNCIsIm9mZnNldCI6Ii00MDAiLCJwb3N0Y29kZSI6IjMyODI4Iiwic2ljIjoiTW90aW9uIFBpY3R1cmUgYW5kIFZpZGVvIFByb2R1Y3Rpb24iLCJzaWNjb2RlIjoiNTEyMTEwIiwic3RhdGUiOiJmbG9yaWRhIiwiemlwIjoiMzI4MjgiLCJpcCI6IjE5Mi4xOTUuNjYuMiJ9; ADRUM=s=1658851228108&r=https%3A%2F%2Fdisneycruise.disney.go.com%2F; AMCV_EDA101AC512D2B230A490D4C%40AdobeOrg=-330454231%7CMCMID%7C36030388337699903060340534169244970583%7CMCAID%7C317002BD1E3B6A06-60001A2562569A9F%7CMCIDTS%7C19200%7CMCAAMLH-1659456029%7C7%7CMCAAMB-1659456029%7Cj8Odv6LonN4r3an7LhD3WZrU1bUpAkFkkiY1ncBR96t2PTI%7CMCCIDH%7C1632368356%7CMCOPTOUT-1658858429s%7CNONE%7CMCSYNCSOP%7C411-19207%7CvVersion%7C3.1.2; geoipLegacy=eyJhcmVhY29kZSI6IjQwNyIsImNvdW50cnkiOiJ1bml0ZWQgc3RhdGVzIiwiY29udGluZW50IjoibmEiLCJjb25uZWN0aW9uIjoiYnJvYWRiYW5kIiwiY291bnRyeWNvZGUiOiI4NDAiLCJjb3VudHJ5aXNvY29kZSI6InVzYSIsImRvbWFpbiI6ImRpc25leS5jb20iLCJkc3QiOiJ5IiwiaXNwIjoiZGlzbmV5IHdvcmxkd2lkZSBzZXJ2aWNlcyBpbmMuIiwibWV0cm8iOiJvcmxhbmRvLWRheXRvbmEgYmNoLW1lbGJybiIsIm1ldHJvY29kZSI6IjUzNCIsIm9mZnNldCI6Ii00MDAiLCJwb3N0Y29kZSI6IjMyODI4Iiwic2ljIjoiTW90aW9uIFBpY3R1cmUgYW5kIFZpZGVvIFByb2R1Y3Rpb24iLCJzaWNjb2RlIjoiNTEyMTEwIiwic3RhdGUiOiJmbG9yaWRhIiwiemlwIjoiMzI4MjgiLCJpcCI6IjE5Mi4xOTUuNjYuMiJ9; geoip=YToxODp7czo4OiJhcmVhY29kZSI7czozOiI0MDciO3M6NzoiY291bnRyeSI7czoxMzoidW5pdGVkIHN0YXRlcyI7czo5OiJjb250aW5lbnQiO3M6MjoibmEiO3M6MTA6ImNvbm5lY3Rpb24iO3M6OToiYnJvYWRiYW5kIjtzOjExOiJjb3VudHJ5Y29kZSI7czozOiI4NDAiO3M6MTQ6ImNvdW50cnlpc29jb2RlIjtzOjM6InVzYSI7czo2OiJkb21haW4iO3M6MTA6ImRpc25leS5jb20iO3M6MzoiZHN0IjtzOjE6InkiO3M6MzoiaXNwIjtzOjMwOiJkaXNuZXkgd29ybGR3aWRlIHNlcnZpY2VzIGluYy4iO3M6NToibWV0cm8iO3M6MjY6Im9ybGFuZG8tZGF5dG9uYSBiY2gtbWVsYnJuIjtzOjk6Im1ldHJvY29kZSI7czozOiI1MzQiO3M6Njoib2Zmc2V0IjtzOjQ6Ii00MDAiO3M6ODoicG9zdGNvZGUiO3M6NToiMzI4MjgiO3M6Mzoic2ljIjtzOjM1OiJNb3Rpb24gUGljdHVyZSBhbmQgVmlkZW8gUHJvZHVjdGlvbiI7czo3OiJzaWNjb2RlIjtzOjY6IjUxMjExMCI7czo1OiJzdGF0ZSI7czo3OiJmbG9yaWRhIjtzOjM6InppcCI7czo1OiIzMjgyOCI7czoyOiJpcCI7czoxMjoiMTkyLjE5NS42Ni4yIjt9Ow%3D%3D; connect.sid=s%3A2j2K_ffqeE1TAM11VlQ5DkVJivAh1uCx.3hRlVdWn%2BC5Fpv6y%2FBhiIpAZyjZBuKbnNp%2B8WOTt6ec' \
+  -H 'referer: https://disneycruise.disney.go.com/cruises-destinations/list/' \
+  -H 'sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36' \
+  -H 'x-conversation-id: fc1eef40-0cf5-11ed-9f07-57e6d8caeac5' \
+  -H 'x-correlation-id: 843ff0a6-ea24-4a62-953e-7a4f702d1cd6' \
+  -H 'x-disney-internal-is-cast: false' \
+  -H 'x-disney-internal-wam_debug: true' \
+  -H 'x-page-id: https://disneycruise.disney.go.com/cruises-destinations/list/' \
+  --compressed
+
+Response
+{
+    "offset": 0,
+    "limit": 2,
+    "total": 2,
+    "links": {
+        "self": {
+            "href": "https://profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BA4DBB876-8E90-480D-B5C8-90ECA4168487%7D/affiliations?site=ALL"
+        },
+        "profile": {
+            "href": "https://profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BA4DBB876-8E90-480D-B5C8-90ECA4168487%7D/profile"
+        }
+    },
+    "self": {
+        "href": "https://profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BA4DBB876-8E90-480D-B5C8-90ECA4168487%7D/affiliations?site=ALL"
+    },
+    "errors": [],
+    "entries": [
+        {
+            "level": "GOLD",
+            "affiliationType": "CASTAWAYCLUB",
+            "clubId": "36"
+        },
+        {
+            "affiliationType": "FL_RESIDENT",
+            "validationDate": "2022-07-26"
+        }
+    ]
+}
+
+
+Jul.29/2022
+{
+    "offset": 0,
+    "limit": 1,
+    "total": 1,
+    "links": {
+        "self": {
+            "href": "https://stage.profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BAB41291D-1F9D-4CC9-9529-7796CDECE0F3%7D/affiliations?site=ALL"
+        },
+        "profile": {
+            "href": "https://stage.profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BAB41291D-1F9D-4CC9-9529-7796CDECE0F3%7D/profile"
+        }
+    },
+    "self": {
+        "href": "https://stage.profile-svc.wdprapps.disney.com/profile-service/v4/guests/%7BAB41291D-1F9D-4CC9-9529-7796CDECE0F3%7D/affiliations?site=ALL"
+    },
+    "errors": [],
+    "entries": [
+        {
+            "level": "SILVER",
+            "affiliationType": "CASTAWAYCLUB",
+            "clubId": "43591449"
+        }
+    ]
+}
+
+Aug.08/2022
+LINKS
+A new link
+
+List of ISO 3166 country codes
+https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+
+A Beginner's Guide: Glob Patterns
+https://www.malikbrowne.com/blog/a-beginners-guide-glob-patterns
+
+
+Aug.11/2022
+WIKITIP
+Client_id for DCL Apps
+https://mywiki.disney.com/display/DCL/Client_id+for+DCL+Apps
+
+DCL Introduction
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+Introduction
+
+DCL Early Bookin Online
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+Early+Booking+Online
+
+Clear Cache - languageSelection_jar_aka
+https://mywiki.disney.com/display/DCL/Clear+cache+-+Languages
+
+DCL API Cache - Services Mapping
+https://mywiki.disney.com/display/DCL/DCL+API+Cache+-+Services+Mapping
+
+DCL API Cache refresh
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCL&title=DCL+API+Cache+refresh
+
+DCL Automation Kraken
+https://mywiki.disney.com/display/DCL/DCL+Automation+Kraken
+
+
+Aug.15/2022
+GITTIP
+
+For Antora to have access to a very restritive repository, be it private or
+public in HTTPS but that requires authentication, use this.
+
+git config --global credential.helper store && echo -n 'Repository URL: ' && read REPLY && git ls-remote -h $REPLY > /dev/null
+
+Aug.16/2022
+GDOCS
+Slides Early Booking.
+https://docs.google.com/presentation/d/1yFQfuWOttY2Wv6giQh9oDbJQNF6ChH628tKEbOTNHFs/edit#slide=id.p1
+
+
+Aug.18/2022
+WIKITIP
+Clear Sailings Cache Steps
+https://mywiki.disney.com/display/DCL/Clear+Sailings+Cache+-+Steps
+
+Aug.19/2022
+WIKITIP
+DCL Early Booking Online
+https://mywiki.disney.com/display/DCL/DCL+Early+Booking+Online
+
+CAST Migration Triaging
+https://mywiki.disney.com/pages/viewpage.action?spaceKey=DCLTTM&title=Cast+Migration+-+Triaging
+
+
+Aug.22/2022
+TIP
+Categories Defined.
+CAT 01A/R - Concierge Royal Suite with Verandah 
+CAT 02A/T - Concierge 1-Bedroom Suite with Verandah
+CAT 02B/T - Concierge 1-Bedroom Suite with Verandah
+CAT 3A/V - Concierge Family Oceanview Stateroom with Verandah
+Category 4A - Deluxe Family Oceanview Stateroom with Verandah
+Category 4B - Deluxe Family Oceanview Stateroom with Verandah
+Category 4C - Deluxe Family Oceanview Stateroom with Verandah
+Category 4D - Deluxe Family Oceanview Stateroom with Verandah
+Category 4E - Deluxe Family Oceanview Stateroom with Verandah
+Category 5A - Deluxe Oceanview Stateroom with Verandah
+Category 5B - Deluxe Oceanview Stateroom with Verandah
+Category 5C - Deluxe Oceanview Stateroom with Verandah
+Category 5D - Deluxe Oceanview Stateroom with Verandah
+Category 5E - Deluxe Oceanview Stateroom with Verandah
+Category 6A - Deluxe Oceanview Stateroom with Verandah
+Category 6B - Deluxe Oceanview Stateroom with Verandah
+Category 7A - Deluxe Oceanview Stateroom with Navigator's Verandah
+Category 8A - Deluxe Family Oceanview Stateroom
+Category 8B - Deluxe Family Oceanview Stateroom
+Category 8C - Deluxe Family Oceanview Stateroom
+Category 8D - Deluxe Family Oceanview Stateroom
+Category 9A - Deluxe Oceanview Stateroom
+Category 9B - Deluxe Oceanview Stateroom
+Category 9C - Deluxe Oceanview Stateroom
+Category 9D - Deluxe Oceanview Stateroom
+Category 10A - Deluxe Inside Stateroom
+Category 11A - Standard Inside Stateroom 
+Category 11B - Standard Inside Stateroom 
+Category 11C - Standard Inside Stateroom 
+VGT - Verandah Guaranteed Stateroom with Restrictions
+OGT - Oceanview Guaranteed Stateroom with Restrictions 
+IGT - Inside Guaranteed Stateroom with Restrictions  
+
+Aug.25/2022
+WIKITIP
+How to setup a Formatter or Code Style for Java Coding Standard
+https://mywiki.disney.com/display/DCL/How+to+setup+a+Formatter+or+Code+Style+for+Java+Coding+Standard
+
+
+Sep.12/2022
+WIKITIP
+Problem Record Steps to Completion
+https://confluence.disney.com/pages/viewpage.action?spaceKey=DisneySignatureExperience&title=Problem+Record+Steps+to+Completion
+
+
+Sep.29/2022
+DCLFLOWTIP
+
+Cruise Listing
+                  PA VAS -> PA SVC -> MOSVC
+PA SPA -> PA VAS -> PA SVC -> SW DB Access (sailing avail)
+                  PA VAS -> MOSVC
+Cruise Details
+Sailing checkout Spa -> MOSVC -> Sailing avail svc (sailing avail)
+Select Stateroom
+Sailing checkout Spa -> MOSVC -> Sailing avail svc (sailing avail)
+Sailing checkout Spa -> MOSVC -> Sailing avail svc (stateroom avail)
+Sailing/voyages avail -> uses the cache avail in Seaware table
+Stateroom avail -> uses real avail from Seaware though bizlogic
+
+Cart
+Sailing checkout Spa -> web api -> Sailing checkout vas -> sailing avail svc (gest session from bizlogic)
+
+Guest info
+Sailing checkout Spa -> web api -> Sailing checkout vas -> sailing avail svc (gest session from bizlogic)
+
+Checkout
+Sailing checkout Spa -> web api -> Sailing checkout vas -> sailing avail svc (gest session from bizlogic)
+
+Cruise Details, Select Stateroom
+All these pages call mkt offers service to get content data for the sailing selected from the UI as well
+
+Cart, Guest Info, Checkout
+All these pages call mkt offers service from Sailing checkout vas to get content data for the sailing selected (edited) 
+
+DFMTIP
+DFM publish showing successful
+7:44
+**How to override the DFM for DCL pages**
+Navigate to https://disneycruise.disney.go.com/dcl-sailing-res-spa/angular-debug/demo
+Under “Set Cookies” section click the two first links:
+Avoid DFM validation Sales Spa: It will create the following cookie → dfmOverrideCookie: true
+Avoid DFM validation Sailing Res Spa: It will create the following cookie → dfmDeactivate: true
+
+Oct.10/2022
+JAVATIP
+Use BooleanUtils.toBoolean() to effectively check for nullability and convert Boolean to 'boolean'.
+
+
+Oct.14/2022
+AWS
+https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/supported-engine-versions.html#redis-version-6.2
+
+
+Oct.24/2022
+REDISTIP
+Quick Start: How to Use Spring Cache on Redis
+https://dzone.com/articles/quickstart-how-to-use-spring-cache-on-redis
+
+https://redisson.org/
+
+
+Spring Boot Redis: Ultimate Guide to Redis Cache with Spring Boot 2
+Posted on April 26, 2019 by Marcus Eisele
+https://programmerfriend.com/ultimate-guide-to-redis-cache-with-spring-boot-2-and-spring-data-redis/
+
+
+
+Jan.03/2023
+AWSTIP 
+If you need to get to a S3 URL for our media.
+
+STAGE
+  https://s3.console.aws.amazon.com/s3/object/stage.integrator?region=us-west-2&prefix=productavail/pages/dcl.site.cruises-destinations.list.en
+LOAD
+	https://s3.console.aws.amazon.com/s3/object/lt.integrator?region=us-west-2&prefix=productavail/pages/dcl.site.cruises-destinations.list.en
+
+
+Jan.10/2023
+AWSTIP
+Redis ElasticCache
+ElasticCache Pricing
+https://aws.amazon.com/elasticache/pricing/
+
+
+Jan.20/2023
+MAVENTIP
+
+If you ever happen to have received the following error message  Maven Malformed \uxxxx encodingwas found
+
+https://turreta.com/2022/11/03/intellij-maven-malformed-uxxxx-encoding/
+
+
+OLD CONTENT
+
+The purpose for this file is to document all things I learn in an antora way
+so it is not a blog but a static site ... a source of truth for day to day 
+things I use.
+
+Jun.6/2021
+Document
+
+How to setup nvm, brew (macOS) even tough I will prefer to use docker to it.
+
+Install Node.js Locally with Node Version Manager (nvm)
+https://heynode.com/tutorial/install-nodejs-locally-nvm
+
+Node Version Manager - POSIX-compliant bash script to manage multiple active 
+node.js versions
+https://github.com/nvm-sh/nvm
+
+This notes are for nvm V0.38.0
+
+$ nvm list -> Reports installed versions under 'nvm' control.
+
+$ nvm install 14 
+
+Tells nvm to install the latest release for 14 line.
+
+$ nvm install 14.12.0 
+
+Installs the specific version.
+
+$ nvm use 14 -> Switch to this installed version. If there are two or more it
+gets the latest version in that branch, e.g., if we have 14.15.4 and 14.17.0 
+installed, it will favor 14.17.0 to use. 
+
+$ nvm use system -> Indicates to work with the node version installed via the 
+nodejs setup wizard.
+
+HomeBrew
+https://brew.sh
+
+$ brew install postgresql
+$ brew services start postgresql
+$ brew install redis
+$ brew services start redis
+
+VS Code for Node.js - Development Pack
+https://marketplace.visualstudio.com/items?itemName=nodesource.vscode-for-node-js-development-pack
+
+
+$ brew install ansible
+
+Vagrant
+Development Environments Made Easy
+https://www.vagrantup.com
+
+Ansible ---> Terraform
+https://www.ansible.com
+https://github.com/ansible/ansible
+
+$ ansible --version
+$ vagrant --version
+
+Git Repo for PlatziVerse   -> NodeJs -> Julian Duque Plazi course
+/Users/czmercy/work-data/git/shared/company/platzi/platziverse
+
+$ npm init
+
+MQTT
+http://mqtt.org

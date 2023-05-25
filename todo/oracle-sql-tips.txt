@@ -1,0 +1,15 @@
+Created: Nov.29/2022
+
+Nov.29/2022
+SELECT VOYAGE_ID, DESTINATION, GEO_AREA , PACKAGE_TYPE, THEME 
+FROM DCLAPI.AVAIL_SAIL AV
+--WHERE TRUNC(AV.SAIL_DATE_FROM) >= TO_DATE('2024-05-01', 'yyyy-mm-dd')
+WHERE to_char(AV.SAIL_DATE_FROM, 'yyyy-mm') IN ('2024-05') 
+AND VOYAGE_ID  IN ('DW2041', 'DW2042', 'DW2043')
+
+--------------------------------------------------------------------------------
+TO_CHAR(SAIL_DATE_FROM, 'yyyy') 
+
+AND to_char(AV.SAIL_DATE_FROM, 'yyyy-mm') IN ('2022-12')
+
+--------------------------------------------------------------------------------

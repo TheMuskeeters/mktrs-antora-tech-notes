@@ -1,0 +1,306 @@
+Created: Jul.06/2022
+Modified: Jul.06/2022
+
+Jul.06/2022
+Using AssertJ to validate exception
+assertThat.exceptionOfType(DCLAPIException.class)
+            .isThrownBy(()->{
+                 marketingOffersRestFacade.getEarlyBooking(SWID_ID, SWID_VALUE, TOKEN);
+            });
+
+Jul.12/2022
+How to ignore "null" or empty properties in json, globally, using Spring configuration
+https://codehunter.cc/a/spring/how-to-ignore-null-or-empty-properties-in-json-globally-using-spring-configuration
+
+
+
+Sep.28/2022
+The following code
+
+My SailingAvailabilityControllerImpl
+private void checkExcludeEarlyBookingSailings(SailingsAvailabilityResponse sailingAvailability) {
+        if (CollectionUtils.isNotEmpty(ebBookingExcludedSailings)) {
+            sailingAvailability.setSailings(
+                sailingAvailability.getSailings().stream()
+                    .map(sailing -> {
+                        if (ebBookingExcludedSailings.contains(sailing.getSailingId())) {
+                            sailing.setBlockedFromBooking(false);
+                        }
+                        return sailing;
+                    })
+                    .collect(Collectors.toList())
+            );
+        }
+    }
+	
+
+     CAN BE REPLACED By
+
+ private void checkExcludeEarlyBookingSailings(final SailingsAvailabilityResponse sailingAvailability) {
+        if (CollectionUtils.isEmpty(ebBookingExcludedSailings)) {
+            return;
+        }
+
+        sailingAvailability.setSailings(
+            sailingAvailability.getSailings().stream()
+                .peek(sailing -> {
+                    if (ebBookingExcludedSailings.contains(sailing.getSailingId())) {
+                        sailing.setBlockedFromBooking(false);
+                    }
+                })
+                .collect(Collectors.toList())
+        );
+    }
+
+====================================================================================================================================
+
+My ProductAvailabilityControllerImpl
+private void checkExcludeEarlyBookingSailings(ProductsAvailabilityResponse productsAvailabilityResponse) {
+        if (CollectionUtils.isNotEmpty(ebBookingExcludedSailings)) {
+            var products = productsAvailabilityResponse.getProducts();
+            products.forEach(product -> {
+                var itineraries = product.getItineraries();
+
+                itineraries.forEach(itinerary -> {
+                    var sailings = itinerary.getSailings();
+                    var isEarlyBookingExcluded = sailings.stream().anyMatch(sailing -> ebBookingExcludedSailings.contains(sailing.getSailingId()));
+
+                    if (isEarlyBookingExcluded) {
+                        // Only change the original value when exclusions are validated.
+                        itinerary.setBlockedFromBooking(false);
+                    }
+                });
+            });
+        }
+    }
+
+     CAN BE REPLACED By
+     
+private void checkExcludeEarlyBookingSailings(ProductsAvailabilityResponse productsAvailabilityResponse) {
+        if (CollectionUtils.isEmpty(ebBookingExcludedSailings)) {
+            return;
+        }
+
+        productsAvailabilityResponse.getProducts().stream()
+            .map(ProductItinerary::getItineraries)
+            .flatMap(Collection::stream)
+            .filter(itinerary -> itinerary.getSailings().stream().anyMatch(sailing -> ebBookingExcludedSailings.contains(sailing.getSailingId())))
+            .forEach(itinerary -> itinerary.setBlockedFromBooking(false));
+    }
+
+
+====================================================================================================================================
+Oct.15/2022
+
+When you need to extract data from a List in groups and with another mapping
+
+https://mkyong.com/java8/java-8-collectors-groupingby-and-mapping-example/
+public static void main1(String[] args) {
+
+        //3 apple, 2 banana, others 1
+        List<Item> items = Arrays.asList(
+            new Item("apple", 10, new BigDecimal("9.99")),
+            new Item("banana", 20, new BigDecimal("19.99")),
+            new Item("orang", 10, new BigDecimal("29.99")),
+            new Item("watermelon", 10, new BigDecimal("29.99")),
+            new Item("papaya", 20, new BigDecimal("9.99")),
+            new Item("apple", 10, new BigDecimal("9.99")),
+            new Item("banana", 10, new BigDecimal("19.99")),
+            new Item("apple", 20, new BigDecimal("9.99"))
+        );
+
+        //group by price
+        Map<BigDecimal, List<Item>> groupByPriceMap =
+            items.stream().collect(Collectors.groupingBy(Item::getPrice));
+
+        System.out.println(groupByPriceMap);
+
+        // group by price, uses 'mapping' to convert List<Item> to Set<String>
+        Map<BigDecimal, List<String>> result =
+            items.stream().collect(
+                Collectors.groupingBy(Item::getPrice,
+                    Collectors.mapping(Item::getName, Collectors.toList())
+                )
+            );
+
+        System.out.println(result);
+
+    }
+
+
+-----------------------------------------------------------------------------------
+Nov.22/2022
+package com.disney.pocdebug;
+
+import org.apache.logging.log4j.message.ParameterizedMessage;
+
+public class Dummy {
+    public static final String AWS_VERSONIX_ERROR = "DCL_GC_44403";
+    public static final String SESSION_CREATION_ERROR_MSG = "An error was raised while trying to obtain the session from Bizlogic response: {}";
+
+    public static void main(String[] args) {
+        String msg = AWS_VERSONIX_ERROR + " - " + SESSION_CREATION_ERROR_MSG;
+        ParameterizedMessage newMsg = new ParameterizedMessage(msg, " VERSONIX ERROR HANDLED");
+        String msg1 = newMsg.getFormattedMessage();
+
+        System.out.println(msg1);
+        sayHello();
+    }
+
+    public static String sayHello() {
+        System.out.println("Hello!");
+        return "Hello!";
+    }
+}
+
+
+Dec.02/2022
+ @Override
+    public Map<K, V> multiRetrieveMap(String keyPattern) {
+        var hOps = redisTemplate.opsForHash();
+        var scanOptions = ScanOptions.scanOptions().match(verifyPattern(keyPattern)).build();
+
+        try (var mapCursor = hOps.scan((K) cacheHash, scanOptions)) {
+            return
+                mapCursor
+                    .stream()
+                    .map(cursorItem -> (Map.Entry<K, V>) cursorItem)
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
+        }
+    }
+
+protected HashMap<K, V> fillRegionMapUsing(List<K> keys, List<V> values) {
+        // Keys must have the 'Cache Region' removed.
+        var keysWithNoRegion = removeCacheRegion(keys);
+
+        return IntStream.range(ZERO, keysWithNoRegion.size())
+            .collect(
+                HashMap::new,
+                (m, i) -> m.put(keysWithNoRegion.get(i), values.get(i)),
+                Map::putAll
+            );
+    }
+
+
+-------------------------------------------------------------------------------------------------------------------------
+Dec.08/2022
+try (MockedStatic<DCLConfigValuesCacheHelper> dclConfigValuesMock = mockStatic(DCLConfigValuesCacheHelper.class);
+             MockedStatic<AffiliationPromoValidationHelper> dclAffiliationsPromoValidatorMock = mockStatic(AffiliationPromoValidationHelper.class);
+             MockedStatic<Headers> headersMock = mockStatic(Headers.class)) {
+
+
+headersMock.when(() -> Headers.anyMethod()).thenReturn(mockedData);
+
+
+headersMock.verify(() -> Headers.get(HttpHeaders.AUTHORIZATION));
+
+
+                }
+
+Here it shows how to create three MockedStatic resources.
+
+
+Dec.08/2022
+Now when you need to mock a void method.
+
+dclAffiliationsPromoValidatorMock
+                .when(() -> AffiliationPromoValidationHelper.validateAffiliations(anyList(), any()))
+                .thenAnswer((Answer<Void>) invocation -> null);
+
+
+Dec.09/2022
+
+var localDate = LocalDate.of(YEAR_2016, MONTH_12, DAY_9);
+            var date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+
+
+    private void writeToJson(Object object, String fileName) {
+        var destinationPath = "c:\\TrashCan\\00000\\files\\";
+        ObjectMapper mapper = new ObjectMapper();
+        File file = new File(destinationPath + fileName);
+        try {
+            // Serialize Java object info JSON file.
+            mapper.writeValue(file, object);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+Dec.14/2022
+var m2 = IntStream.range(ZERO, keysWithNoRegion.size())
+            .collect(
+                HashMap::new,
+                (m, i) -> m.put(keysWithNoRegion.get(i), values.get(i)),
+                Map::putAll
+            );
+
+
+var map = new LinkedHashMap<K, V>();
+
+        IntStream.range(ZERO, keys.size())
+            .forEach(keyPos -> {
+                var key = keys.get(keyPos);
+                var value = values.get(keyPos);
+
+                if (value != null) {
+                    map.put(key, value);
+                }
+            });
+        return map;
+
+
+Dec.15/2022
+private Date assignDateNowWith(int yearDiff) {
+        LocalDateTime ldt = LocalDateTime.now().plusYears(yearDiff);
+
+        return Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
+    }
+
+
+Jan.25/2022
+ amountToPay = amountToPay.add(
+                    paymentRequestEntry.getCoupons().getBreakdownByGuest()
+                    .entrySet()
+                    .stream()
+                    .flatMap(entrySet -> entrySet.getValue().getCouponDetails().stream())
+                    .map(couponDetails -> BigDecimal.valueOf(couponDetails.getAmount()))
+                    .reduce(BigDecimal.ZERO, BigDecimal::add)
+            );
+
+            sample JSON
+            {
+  "paymentSessionId": "c215fa958fad4ddfae06d129010598a502",
+  "entries": [
+    {
+      "sessionId": "3E2E046A-01AA-486B-B76D-ABB18DFB5121",
+      "payment": {
+        "amount": 10
+      },
+      "coupons": {
+        "breakdownByGuest": {
+          "1": {
+            "couponDetails": [
+              {
+                "id": "151711",
+                "currency": "USD",
+                "amount": 1
+              }
+            ]
+          },
+           "2": {
+            "couponDetails": [
+              {
+                "id": "147107",
+                "currency": "USD",
+                "amount": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
