@@ -2,6 +2,8 @@
 * xref:spring-boot:index.adoc[Spring Boot]
 ** xref:spring-boot:versions.adoc[Versions]
 ** xref:spring-boot:native.adoc[Spring Native]
+* xref:quarkus:index.adoc[Quarkus]
+* xref:micronaut:index.adoc[Micronaut]
 * xref:setup:index.adoc[Setup Guides]
 ** xref:setup:tools/tools.adoc[Tools]
 *** xref:setup:tools/git-github.adoc[Git/Github]

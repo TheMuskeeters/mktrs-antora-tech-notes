@@ -1,0 +1,3 @@
+= Micronaut
+
+include::ROOT:partial$lorem-ipsum.adoc[]

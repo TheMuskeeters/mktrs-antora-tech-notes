@@ -1,0 +1,32 @@
+= Quarkus
+
+This is a page work in progress.
+For now these are unedited blocks of text.
+
+https://www.manning.com/liveproject/create-a-REST-API -> Manning Free content (requires an user account)
+
+
+
+https://plugins.jetbrains.com/plugin/13234-quarkus-tools
+
+
+----------------------------------------------------------------------------------
+References
+
+Understanding Quarkus by Antonio Goncalves
+https://developers.redhat.com/e-books/understanding-quarkus
+
+
+Practising Quarkus by Antonio Goncalves
+https://developers.redhat.com/e-books/practising-quarkus
+
+
+Quarkus why, how, and what with Emmanuel Bernard
+https://www.youtube.com/watch?v=SQDR34KoC-8
+
+Quarkus Insights (youtube channel)
+https://www.youtube.com/quarkusio
+
+----------------------------------------------------------------------------------
+
+include::ROOT:partial$lorem-ipsum.adoc[]
