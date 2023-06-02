@@ -5,9 +5,20 @@ For now these are unedited blocks of text.
 
 https://www.manning.com/liveproject/create-a-REST-API -> Manning Free content (requires an user account)
 
-
-
+Intellij Quarkus Tools
 https://plugins.jetbrains.com/plugin/13234-quarkus-tools
+
+Use https://code.quarkus.io/ to bootstrap the project.
+
+Creating your first Application
+https://quarkus.io/guides/getting-started
+
+
+RESTEasy Reactive
+https://quarkus.io/guides/resteasy-reactive
+
+Hibernate Validator
+https://quarkus.io/guides/validation
 
 
 ----------------------------------------------------------------------------------
@@ -28,5 +39,18 @@ Quarkus Insights (youtube channel)
 https://www.youtube.com/quarkusio
 
 ----------------------------------------------------------------------------------
+
+
+[NOTE]
+====
+The memory consumed by a process is called the resident set size (RSS). You can check it by 
+using a ps -o pid,rss,command command. 
+The value is in bytes, so to get a more “human-readable” version we recommend dividing 
+the value by 1,024 to determine the number of megabytes.
+
+Code
+ps -o pid, rss, command | grep --color java | awk '{$2=int($2/1024)"M";}{print;}
+====
+
 
 include::ROOT:partial$lorem-ipsum.adoc[]

@@ -1,5 +1,10 @@
 = Versions
 
+[NOTE]
+====
+In the table below, only the main number is recorded, i.e., not maintenance releases.
+====
+
 [%header]
 |===
 ||Version|Relase Date|JDK Baseline|Notes|
