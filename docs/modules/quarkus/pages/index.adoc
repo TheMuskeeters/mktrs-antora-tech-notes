@@ -13,6 +13,8 @@ Use https://code.quarkus.io/ to bootstrap the project.
 Creating your first Application
 https://quarkus.io/guides/getting-started
 
+Testing Your Application
+https://quarkus.io/guides/getting-started-testing
 
 RESTEasy Reactive
 https://quarkus.io/guides/resteasy-reactive
@@ -21,6 +23,11 @@ Hibernate Validator
 https://quarkus.io/guides/validation
 
 
+Zulip
+htpps://quarkusio.zulipchat.com
+
+Quarkusio/Quarkus
+https://github.com/quarkusio/quarkus
 ----------------------------------------------------------------------------------
 References
 
@@ -32,7 +39,7 @@ Practising Quarkus by Antonio Goncalves
 https://developers.redhat.com/e-books/practising-quarkus
 
 
-Quarkus why, how, and what with Emmanuel Bernard
+Quarkus why, how, and what with Emmanuel Bernard (Intro to Quarkus by its createor)
 https://www.youtube.com/watch?v=SQDR34KoC-8
 
 Quarkus Insights (youtube channel)
@@ -52,5 +59,19 @@ Code
 ps -o pid, rss, command | grep --color java | awk '{$2=int($2/1024)"M";}{print;}
 ====
 
+Some other commands
+
+$ mvn compile quarkus:dev
+
+$ mvn quarkus:add-extensions -Dextensions=spring-web
+
+
+Panache for JPA (like Spring Data JPA)
+
+$ mvn package -Pnative -> Do a native image compilation.
+
+
+http://localhost:8080/swagger-ui
 
 include::ROOT:partial$lorem-ipsum.adoc[]
+

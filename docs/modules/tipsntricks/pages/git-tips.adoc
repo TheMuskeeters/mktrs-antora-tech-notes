@@ -3,7 +3,6 @@
 Here you can find some references to resources and general tips to a daily basis
 *Git* usage.
 
-* *Generating a new SSH key and adding it to the ssh-agent* (https://help.github.com/enterprise/2.11/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 * *SSH-KEYGEN - GENERATE A NEW SSH KEY* (https://www.ssh.com/ssh/keygen/)
 * *Running Bash scripts on Windows* (https://epsil.github.io/blog/2016/04/20/)
 * *Git Branch Tutorial* (https://www.atlassian.com/git/tutorials/using-branches)
