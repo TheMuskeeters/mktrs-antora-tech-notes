@@ -7,3 +7,5 @@ In this section you will find a
 * xref:maven-tips.adoc[Maven]
 * xref:lombok-tips.adoc[Lombok]
 * xref:sonarqube-tips.adoc[SonarQube]
+* xref:tipsntricks:docker-tips.adoc[Docker]
+* xref:tipsntricks:vscode-tips.adoc[Visual Studio]

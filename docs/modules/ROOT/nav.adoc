@@ -30,5 +30,6 @@
 ** xref:tipsntricks:sonarqube-tips.adoc[SonarQube]
 ** xref:tipsntricks:docker-tips.adoc[Docker]
 ** xref:tipsntricks:unix-tips.adoc[Unix]
+** xref:tipsntricks:vscode-tips.adoc[Visual Studio]
 * xref:glossary.adoc[Glossary]
 * xref:references.adoc[References]

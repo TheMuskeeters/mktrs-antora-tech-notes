@@ -1,0 +1,7 @@
+= Visual Studio Code
+
+== Set default terminal in VS Code
+By default the terminal *_VS Code_* uses is the default Operating System Terminal. In _Windows_ 
+it is *_PowerShell_*. To change this, just press *_CTRL+SHIFT+P (Window)_* or *_CMD+SHIFT+P (MacOS)_*.
+Then, type _Terminal: Select Default Profile_ and then from the drop down box, choose the 
+terminal you want to set as defalt.
