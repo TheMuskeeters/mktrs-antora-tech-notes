@@ -22,6 +22,14 @@ https://quarkus.io/guides/resteasy-reactive
 Hibernate Validator
 https://quarkus.io/guides/validation
 
+Connecting to an ElasticSearch Cluster
+https://quarkus.io/guides/elasticsearch
+
+Building Quarkus Apps with Quarkus Command Line Interface (CLI)
+https://quarkus.io/guides/cli-tooling
+
+Developing with Quarkus
+https://developers.redhat.com/learn/quarkus
 
 Zulip
 htpps://quarkusio.zulipchat.com

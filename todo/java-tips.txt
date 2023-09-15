@@ -304,3 +304,26 @@ Jan.25/2022
     }
   ]
 }
+
+Jun.23/2023
+@Test
+    @DisplayName("should Retrieve an empty list of users")
+    void shouldRetrieveAnEmptyUserList() {
+        client.get()
+            .uri(USER_CONTROLLER_BASE_PATH)
+            .exchange()
+            .expectStatus().isOk()
+            .expectBody(UsersDataResponse.class)
+            //.returnResult().getResponseBody();
+            //.returnResult()
+            .consumeWith(response -> {
+                var res = response.getResponseBody();
+
+                assertThat(res).isNotNull();
+                assertThat(res.count()).isNotNull().isEqualTo(LONG_ZERO);
+                assertThat(res.users()).isNotNull().isEmpty();
+            });
+    }
+
+The reason for this snippet is to remind me of a way to get the real object from the WebTestClient
+See commented lines L317 and L318.
