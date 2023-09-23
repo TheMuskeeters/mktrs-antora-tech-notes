@@ -10,6 +10,13 @@ https://plugins.jetbrains.com/plugin/13234-quarkus-tools
 
 Use https://code.quarkus.io/ to bootstrap the project.
 
+
+Quarkus All Coniguration Options
+https://quarkus.io/guides/all-config
+
+Guides Latest
+https://quarkus.io/guides/
+
 Creating your first Application
 https://quarkus.io/guides/getting-started
 
@@ -51,7 +58,7 @@ Quarkus why, how, and what with Emmanuel Bernard (Intro to Quarkus by its create
 https://www.youtube.com/watch?v=SQDR34KoC-8
 
 Quarkus Insights (youtube channel)
-https://www.youtube.com/quarkusio
+https://www.youtube.com/@Quarkusio
 
 ----------------------------------------------------------------------------------
 
