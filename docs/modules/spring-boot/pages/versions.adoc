@@ -25,3 +25,8 @@ In the table below, only the main number is recorded, i.e., not maintenance rele
 |15|3.0.0|2022-11-24|17||
 |16|3.1.0|2023-05-18|17||
 |===
+
+
+Last 2.7 branch is no longer supported
+
+Since 3.2 support is dropped for 2.7 and no JDK 8/11.
