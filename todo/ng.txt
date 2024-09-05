@@ -1,4 +1,5 @@
-File Created: Apr.06/2024
+File Created:  Apr.06/2024
+File Modified: Jun.07/2024
 
 ------------------------
 The jhipster Mini book 7 -> Mat Raible
@@ -35,3 +36,21 @@ $ ng g component <component-name>
 Add Service
 $ng g service shared/search/search
 where 'shared/search/search is the path to the service 'search'.
+
+Jun.07/2024
+Angular Builders - How Do They Work? (2022)
+https://www.youtube.com/watch?v=VKFQzeswhDM
+
+Angular Builders – Creating Custom Builder from Scratch (Advanced, 2022)
+https://www.youtube.com/watch?v=QbDkDLnXAZE
+
+Angular Json File – My Top 8 Settings (2022)
+https://www.youtube.com/watch?v=L9dG17xbVic
+
+Bundle Test
+
+Node js 20.14.0
+Angular 17
+npm i @angular-builders/custom-webpack@17 webpack-merge --save-dev
+
+npm i core-js --save
