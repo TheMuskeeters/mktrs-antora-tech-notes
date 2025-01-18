@@ -1,0 +1,18 @@
+Created:  Jan.17/2025
+Modified: Jan.17/2025
+
+If you have a 'var' in your java files and you would like IntelliJ perform a change to its explicit type, you can use the following steps:
+
+1. Place the cursor on the 'var' keyword.
+2. Press 'Alt + Enter' to open the context menu.
+3. Select 'Replace 'var' with explicit type' from the context menu. IntelliJ will replace the 'var' keyword with the explicit type.
+
+Another way is the followin.
+
+1. Use Code>Analyze Code>Run Inspection by Name (CTRL+ALT+SHIFT+I) a dialog appears and type 'Variable Type can be explicit'
+2. Select your scope and run the inspection..
+
+When you hava a README.adoc and you want to convert it to README.md.
+Open a bash terminal and type
+
+$ npx downdoc README.adoc ---> https://github.com/opendevise/downdoc
