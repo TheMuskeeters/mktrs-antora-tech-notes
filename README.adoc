@@ -1,6 +1,12 @@
+:toc: macro
+:toclevels: 5
+:toc-placement!:
+
 = mktrs-antora-tech-notes README
 
-V2023.1.0
+V2025.1.0
+
+toc::[]
 
 = Introduction
 This tech notes site will document steps, guides, and central information at
